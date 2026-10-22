@@ -1,0 +1,1514 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Portal do Programa de Desenvolvimento de Líderes da LOTS Group — Cássia Garcia Consultoria.">
+<meta name="theme-color" content="#0A2342">
+<title>Sou Líder LOTS</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* reset equivalente ao do ambiente de origem */
+:root{color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+*{-webkit-tap-highlight-color:transparent}
+body{margin:0;font:14px -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<style>
+/* Layout: a vertical route rail of 6 module stops on the left (horizontal chips on phones),
+   each stop opening a tabbed panel. Navy operations ground, Cássia blue as primary accent,
+   LOTS green reserved for the client's own marks. */
+:root{
+  --ink:#0A2342;          /* navy — program ground */
+  --ink-2:#143055;
+  --ink-3:#20406B;
+  --paper:#F4F6F9;        /* cool off-white, slight blue bias */
+  --card:#FFFFFF;
+  --line:#D9E0EA;
+  --fg:#15243A;
+  --fg-2:#4A5B74;
+  --fg-3:#73839B;
+  --accent:#2F7CB8;       /* Cássia blue */
+  --accent-soft:#9ED4EC;  /* logo mark blue */
+  --accent-wash:#E8F2F9;
+  --lots:#8FBF3F;         /* LOTS green, darkened for contrast on light */
+  --lots-wash:#EEF5DF;
+  --plum:#7B4D9C;         /* mentoria track */
+  --plum-wash:#F1EAF7;
+  --d:#C0453A; --i:#C98711; --s:#3F8F6E; --c:#4A6FA5;
+  --d-wash:#F8EAE8; --i-wash:#FAF1DF; --s-wash:#E7F2ED; --c-wash:#EAEFF7;
+  --warn:#B3541E; --warn-wash:#FBEFE6;
+  --shadow:0 1px 2px rgba(10,35,66,.06), 0 8px 24px rgba(10,35,66,.07);
+  --display:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --body:'IBM Plex Sans', -apple-system, 'Segoe UI', Arial, sans-serif;
+  --gut:max(16px, env(safe-area-inset-left, 0px));
+  --gut-r:max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#061A30; --ink-2:#0C2340; --ink-3:#17395F;
+    --paper:#0A1626; --card:#102134; --line:#22384F;
+    --fg:#E6EDF6; --fg-2:#A9BACE; --fg-3:#7C8FA6;
+    --accent:#63AEE0; --accent-soft:#9ED4EC; --accent-wash:#13304A;
+    --lots:#A9D45C; --lots-wash:#1D2E16;
+    --plum:#B98FD6; --plum-wash:#2A1D38;
+    --d:#E8756A; --i:#E5AE45; --s:#61BE97; --c:#8AA9DC;
+    --d-wash:#30191A; --i-wash:#302512; --s-wash:#132B22; --c-wash:#17233A;
+    --warn:#E59560; --warn-wash:#31200F;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#061A30; --ink-2:#0C2340; --ink-3:#17395F;
+  --paper:#0A1626; --card:#102134; --line:#22384F;
+  --fg:#E6EDF6; --fg-2:#A9BACE; --fg-3:#7C8FA6;
+  --accent:#63AEE0; --accent-soft:#9ED4EC; --accent-wash:#13304A;
+  --lots:#A9D45C; --lots-wash:#1D2E16;
+  --plum:#B98FD6; --plum-wash:#2A1D38;
+  --d:#E8756A; --i:#E5AE45; --s:#61BE97; --c:#8AA9DC;
+  --d-wash:#30191A; --i-wash:#302512; --s-wash:#132B22; --c-wash:#17233A;
+  --warn:#E59560; --warn-wash:#31200F;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--fg);
+  font-family:var(--body); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--ink)}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0}
+a{color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.eyebrow{font-family:var(--display);font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3)}
+
+/* ---------- masthead ---------- */
+.mast{background:var(--ink);color:#fff}
+.mast .wrap{padding-block:18px 0}
+.mast-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.brands{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brands img.cg{height:40px;width:auto}
+.brands .div{width:1px;height:30px;background:rgba(255,255,255,.22)}
+.brands img.lg{height:26px;width:auto}
+.mast-meta{font-size:.78rem;color:#9FB6CE;text-align:right;line-height:1.5}
+.mast-id{padding-block:22px 26px}
+.mast-id .kicker{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft)}
+.mast-id h1{font-size:clamp(2rem,6vw,3.1rem);font-weight:700;letter-spacing:-.02em;margin-top:8px;color:#fff}
+.mast-id .sub{margin-top:10px;max-width:60ch;color:#C3D3E4;font-size:1rem}
+.mast-facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+.mast-facts div{min-width:0}
+.mast-facts dt{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#8EA7C2;font-family:var(--display);font-weight:600}
+.mast-facts dd{margin:3px 0 0;font-size:.95rem;color:#fff;font-weight:500}
+
+/* ---------- route rail ---------- */
+.rail-bar{background:var(--ink-2);position:sticky;top:env(safe-area-inset-top,0px);z-index:30;border-bottom:1px solid rgba(255,255,255,.1)}
+.rail{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:0}
+.rail::-webkit-scrollbar{display:none}
+.stop{
+  appearance:none;background:none;border:0;cursor:pointer;flex:0 0 auto;
+  font-family:var(--display);font-weight:600;color:#A8BED6;
+  padding:14px 14px 12px;border-bottom:3px solid transparent;
+  display:flex;align-items:baseline;gap:8px;font-size:.9rem;white-space:nowrap;
+}
+.stop b{font-size:1rem;color:#fff;font-weight:700}
+.stop small{font-size:.72rem;color:#7F9ABA;font-weight:500}
+.stop:hover{color:#fff;background:rgba(255,255,255,.05)}
+.stop[aria-selected="true"]{border-bottom-color:var(--lots);color:#fff}
+.stop[aria-selected="true"] small{color:var(--lots)}
+.stop:focus-visible{outline:2px solid var(--accent-soft);outline-offset:-3px}
+
+/* ---------- tabs ---------- */
+.tabbar{background:var(--card);border-bottom:1px solid var(--line);position:relative;z-index:20}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  appearance:none;background:none;border:0;cursor:pointer;flex:0 0 auto;
+  font-family:var(--display);font-size:.86rem;font-weight:600;color:var(--fg-2);
+  padding:13px 14px;border-bottom:3px solid transparent;white-space:nowrap;
+}
+.tab:hover{color:var(--fg);background:var(--accent-wash)}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+
+/* ---------- blocks ---------- */
+main{padding-block:0 64px}
+.panel{padding-block:34px}
+section{margin-top:40px}
+section:first-child{margin-top:0}
+.sec-head{margin-bottom:18px}
+.sec-head h2{font-size:1.5rem;font-weight:700;letter-spacing:-.01em;margin-top:6px}
+.sec-head p{color:var(--fg-2);margin-top:8px;max-width:72ch;font-size:.97rem}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+
+/* number tiles */
+.nums{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(152px,1fr))}
+.num{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 16px 14px;min-width:0}
+.num .v{font-family:var(--display);font-size:2.1rem;font-weight:700;line-height:1;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .num .v{color:var(--accent-soft)}}
+:root[data-theme="dark"] .num .v{color:var(--accent-soft)}
+.num .k{font-size:.8rem;color:var(--fg-2);margin-top:7px;line-height:1.35}
+.num .n{font-size:.72rem;color:var(--fg-3);margin-top:6px;line-height:1.35}
+.num.hi{border-color:var(--lots);background:var(--lots-wash)}
+
+/* timeline */
+.tl{display:grid;gap:0}
+.tl-item{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.tl-item:first-child{border-top:0}
+.tl-t{font-family:var(--display);font-weight:700;font-size:.82rem;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:2px}
+.tl-b h4{font-size:1rem;font-weight:600}
+.tl-b p{color:var(--fg-2);font-size:.9rem;margin-top:4px}
+
+/* activity list */
+.act{border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.act-row{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 18px;border-top:1px solid var(--line)}
+.act-row:first-child{border-top:0}
+.act-n{font-family:var(--display);font-weight:700;font-size:.85rem;color:var(--fg-3);font-variant-numeric:tabular-nums;padding-top:2px}
+.act-b h4{font-size:1rem;font-weight:600;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.act-obj{margin-top:7px;font-size:.92rem;color:var(--fg-2)}
+.act-obj b{color:var(--fg);font-weight:600}
+.pill{display:inline-block;font-family:var(--display);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--fg-2);background:var(--paper);white-space:nowrap}
+.pill.jogo{color:var(--i);border-color:var(--i);background:var(--i-wash)}
+.pill.case{color:var(--c);border-color:var(--c);background:var(--c-wash)}
+.pill.teste{color:var(--d);border-color:var(--d);background:var(--d-wash)}
+.pill.ind{color:var(--s);border-color:var(--s);background:var(--s-wash)}
+.pill.go{color:var(--lots);border-color:var(--lots);background:var(--lots-wash)}
+.pill.sp{color:var(--accent);border-color:var(--accent);background:var(--accent-wash)}
+
+/* bars */
+.bars{display:grid;gap:11px}
+.bar-row{display:grid;grid-template-columns:118px 1fr 54px;gap:12px;align-items:center;font-size:.88rem}
+.bar-row .lbl{color:var(--fg-2);min-width:0}
+.bar-track{background:var(--paper);border:1px solid var(--line);border-radius:4px;height:22px;position:relative;overflow:hidden}
+.bar-fill{position:absolute;inset:0 auto 0 0;border-radius:3px 0 0 3px}
+.bar-row .val{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-family:var(--display)}
+.bar-row.dd .bar-fill{background:var(--d)} .bar-row.dd .val{color:var(--d)}
+.bar-row.ii .bar-fill{background:var(--i)} .bar-row.ii .val{color:var(--i)}
+.bar-row.ss .bar-fill{background:var(--s)} .bar-row.ss .val{color:var(--s)}
+.bar-row.cc .bar-fill{background:var(--c)} .bar-row.cc .val{color:var(--c)}
+.bar-row.neutral .bar-fill{background:var(--accent)}
+@media (max-width:460px){.bar-row{grid-template-columns:92px 1fr 46px;gap:8px;font-size:.82rem}}
+
+/* paired bars */
+.pair{display:grid;gap:13px}
+.pair-row{display:grid;gap:5px}
+.pair-row .lbl{font-size:.87rem;color:var(--fg);min-width:0}
+.pair-line{display:grid;grid-template-columns:30px 1fr 42px;gap:9px;align-items:center;font-size:.78rem}
+.pair-line .u{font-family:var(--display);font-weight:600;color:var(--fg-3);font-size:.72rem}
+.pair-line .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-family:var(--display)}
+.pair-track{background:var(--paper);border:1px solid var(--line);border-radius:3px;height:15px;position:relative;overflow:hidden}
+.pair-fill{position:absolute;inset:0 auto 0 0}
+.pair-line.sp .pair-fill{background:var(--accent)} .pair-line.sp .v{color:var(--accent)}
+.pair-line.go .pair-fill{background:var(--lots)} .pair-line.go .v{color:var(--lots)}
+
+/* DISC profile cards */
+.disc4{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.dc{border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--card);border-top-width:4px}
+.dc.d{border-top-color:var(--d)} .dc.i{border-top-color:var(--i)}
+.dc.s{border-top-color:var(--s)} .dc.c{border-top-color:var(--c)}
+.dc .ltr{font-family:var(--display);font-size:1.7rem;font-weight:700;line-height:1}
+.dc.d .ltr{color:var(--d)} .dc.i .ltr{color:var(--i)}
+.dc.s .ltr{color:var(--s)} .dc.c .ltr{color:var(--c)}
+.dc .nm{font-family:var(--display);font-weight:600;font-size:.95rem;margin-top:2px}
+.dc .big{font-family:var(--display);font-size:1.5rem;font-weight:700;margin-top:10px;font-variant-numeric:tabular-nums}
+.dc .cap{font-size:.8rem;color:var(--fg-2);margin-top:3px}
+.dc ul{margin:11px 0 0;padding-left:17px;font-size:.85rem;color:var(--fg-2)}
+.dc li{margin-top:4px}
+
+/* tables */
+/* stacked bars */
+.sb{display:grid;gap:14px}
+.sb-row{display:grid;gap:6px}
+.sb-row .q{font-size:.89rem;color:var(--fg);min-width:0}
+.sb-track{display:flex;height:28px;border-radius:5px;overflow:hidden;border:1px solid var(--line)}
+.sb-seg{display:grid;place-items:center;font-family:var(--display);font-size:.76rem;font-weight:600;color:#fff;min-width:0;white-space:nowrap}
+.sb-seg.ot{background:var(--s)}
+.sb-seg.bo{background:var(--accent)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--fg-2);margin-top:14px}
+.legend span{display:flex;align-items:center;gap:7px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+/* quotes */
+.quotes{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.quote{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:17px 19px;display:flex;flex-direction:column;gap:11px}
+.quote.long{grid-column:1/-1;border-left-color:var(--s)}
+.quote p{font-size:.95rem;line-height:1.62}
+.quote footer{background:none;margin:0;padding:0}
+.quote .tagrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:auto}
+.quote .score{font-family:var(--display);font-weight:700;font-size:.76rem;color:var(--s)}
+
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.88rem}
+th,td{text-align:left;padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:0;background:var(--ink);color:#fff;font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+tbody tr:nth-child(even){background:var(--paper)}
+td.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* callouts */
+.note{border-left:3px solid var(--accent);background:var(--accent-wash);padding:14px 16px;border-radius:0 8px 8px 0;font-size:.92rem}
+.note.warn{border-left-color:var(--warn);background:var(--warn-wash)}
+.note.good{border-left-color:var(--lots);background:var(--lots-wash)}
+.note.plum{border-left-color:var(--plum);background:var(--plum-wash)}
+.note h4{font-size:.95rem;font-weight:600;margin-bottom:5px}
+.note p + p{margin-top:8px}
+
+/* two-col lists */
+.bo{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.bo-col{border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.bo-col h4{padding:12px 16px;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#fff}
+.bo-col.pos h4{background:var(--s)} .bo-col.neg h4{background:var(--warn)}
+.bo-col li{list-style:none;padding:11px 16px;border-top:1px solid var(--line);font-size:.9rem;display:flex;gap:10px;justify-content:space-between;align-items:flex-start}
+.bo-col ul{margin:0;padding:0}
+.bo-col li span{min-width:0}
+
+/* gaps */
+.gap-list{display:grid;gap:12px}
+.gap{border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:0 10px 10px 0;background:var(--card);padding:16px 18px}
+.gap h4{font-size:1rem;font-weight:600;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.gap .mag{font-family:var(--display);font-size:.78rem;font-weight:700;color:var(--warn);background:var(--warn-wash);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.gap p{font-size:.91rem;color:var(--fg-2);margin-top:7px}
+
+/* recommendations */
+.rec{display:grid;gap:12px}
+.rec-item{display:grid;grid-template-columns:30px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.rec-n{font-family:var(--display);font-weight:700;color:#fff;background:var(--accent);border-radius:6px;width:28px;height:28px;display:grid;place-items:center;font-size:.85rem}
+.rec-b h4{font-size:1rem;font-weight:600}
+.rec-b p{font-size:.91rem;color:var(--fg-2);margin-top:6px}
+.rec-b .who{margin-top:9px;display:flex;gap:6px;flex-wrap:wrap}
+
+/* files */
+.files{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(265px,1fr))}
+.file{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;text-decoration:none;color:inherit}
+.file:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.file .ext{flex:0 0 auto;font-family:var(--display);font-size:.64rem;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--d);border-radius:5px;padding:5px 7px;margin-top:2px}
+.file > div:last-child{min-width:0}
+.file h4{font-size:.96rem;font-weight:600}
+.file p{font-size:.82rem;color:var(--fg-2);margin-top:4px}
+.file .open{font-size:.78rem;color:var(--accent);margin-top:7px;font-weight:600}
+.file.off{opacity:.62;pointer-events:none}
+.file.off .ext{background:var(--fg-3)}
+
+/* soon */
+.soon{text-align:center;padding:56px 20px;border:1px dashed var(--line);border-radius:12px;background:var(--card)}
+.soon .m{font-family:var(--display);font-size:2.6rem;font-weight:700;color:var(--line);line-height:1}
+.soon h2{font-size:1.45rem;margin-top:12px}
+.soon p{color:var(--fg-2);margin-top:10px;max-width:52ch;margin-inline:auto;font-size:.95rem}
+.soon .when{margin-top:16px;display:inline-block}
+
+footer{background:var(--ink);color:#9FB6CE;margin-top:0}
+footer .wrap{padding-block:30px;display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center}
+footer img{height:30px;width:auto}
+footer .c{font-size:.82rem;line-height:1.6}
+footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
+
+
+/* access gate */
+#gate{position:fixed;inset:0;z-index:100;background:var(--ink);display:grid;place-items:center;
+  padding-left:var(--gut);padding-right:var(--gut-r);padding-block:40px;overflow-y:auto}
+#gate .box{width:100%;max-width:430px}
+#gate .brands{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+#gate .brands img.cg{height:36px;width:auto}
+#gate .brands img.lg{height:23px;width:auto}
+#gate .brands .div{width:1px;height:27px;background:rgba(255,255,255,.22)}
+#gate .kick{font-family:var(--display);font-size:.7rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent-soft)}
+#gate h2{font-size:1.75rem;font-weight:700;color:#fff;margin-top:9px;letter-spacing:-.01em}
+#gate .lead{color:#C3D3E4;font-size:.95rem;margin-top:11px}
+#gate form{display:flex;gap:9px;margin-top:24px;flex-wrap:wrap}
+#gate input{flex:1 1 180px;min-width:0;font-family:var(--body);font-size:1rem;padding:12px 14px;
+  border-radius:8px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.07);color:#fff}
+#gate input::placeholder{color:#7F9ABA}
+#gate input:focus{outline:2px solid var(--accent-soft);outline-offset:1px;border-color:transparent}
+#gate button{flex:0 0 auto;font-family:var(--display);font-weight:600;font-size:.95rem;cursor:pointer;
+  padding:12px 22px;border-radius:8px;border:0;background:var(--lots);color:#0A2342}
+#gate button:hover{filter:brightness(1.07)}
+#gate button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+#gate .msg{color:#F0A99E;font-size:.87rem;margin-top:12px;min-height:1.2em}
+#gate .foot{color:#7F9ABA;font-size:.8rem;margin-top:30px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.13);line-height:1.6}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+
+<div id="gate">
+  <div class="box">
+    <div class="brands">
+      <img class="cg" src="img/cassia.png" alt="Cássia Garcia Consultoria">
+      <span class="div"></span>
+      <img class="lg" src="img/lots.png" alt="LOTS Group">
+    </div>
+    <div class="kick">Acesso restrito</div>
+    <h2>Sou Líder LOTS</h2>
+    <p class="lead">Portal do Programa de Desenvolvimento de Líderes. Digite o código de acesso que você recebeu junto com este link.</p>
+    <form id="gate-form">
+      <label for="gate-code" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Código de acesso</label>
+      <input id="gate-code" type="password" autocomplete="off" placeholder="Código de acesso" autocapitalize="none" spellcheck="false">
+      <button type="submit">Entrar</button>
+    </form>
+    <p class="msg" id="gate-msg" role="status"></p>
+    <p class="foot">Este portal reúne dados do programa de liderança da LOTS Group e é de uso interno do RH e da gerência. Em caso de dúvida sobre o acesso, fale com a Cássia Garcia Consultoria.</p>
+  </div>
+</div>
+
+<div id="site" hidden>
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-top">
+      <div class="brands">
+        <img class="cg" src="img/cassia.png" alt="Cássia Garcia Consultoria">
+        <span class="div"></span>
+        <img class="lg" src="img/lots.png" alt="LOTS Group">
+      </div>
+      <div class="mast-meta">Programa de Desenvolvimento de Líderes<br>Polo SP &middot; Polo GO</div>
+    </div>
+    <div class="mast-id">
+      <div class="kicker">Portal do Programa</div>
+      <h1>Sou Líder LOTS</h1>
+      <p class="sub">Seis paradas em seis meses. A cada módulo, esta página reúne a estrutura do encontro, as atividades e seus objetivos, os números da turma, o resultado dos testes e todo o material aplicado — para o RH e a gerência acompanharem o que está acontecendo na liderança da operação.</p>
+      <dl class="mast-facts">
+        <div><dt>Turmas</dt><dd>2 presenciais + 1 mentoria online</dd></div>
+        <div><dt>Duração</dt><dd>6 módulos · 6 meses</dd></div>
+        <div><dt>Público</dt><dd>Liderança operacional e coordenação</dd></div>
+        <div><dt>Facilitação</dt><dd>Cássia Garcia</dd></div>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<nav class="rail-bar" aria-label="Módulos do programa">
+  <div class="wrap">
+    <div class="rail" role="tablist">
+      <button class="stop" role="tab" data-mod="m1" aria-selected="true"><b>M1</b> Ponto de Partida <small>Out/26</small></button>
+      <button class="stop" role="tab" data-mod="m2" aria-selected="false"><b>M2</b> Comunicação Assertiva <small>Nov/26</small></button>
+      <button class="stop" role="tab" data-mod="m3" aria-selected="false"><b>M3</b> Inteligência Emocional <small>Dez/26</small></button>
+      <button class="stop" role="tab" data-mod="m4" aria-selected="false"><b>M4</b> Gestão de Pessoas <small>a confirmar</small></button>
+      <button class="stop" role="tab" data-mod="m5" aria-selected="false"><b>M5</b> Gestão de Performance <small>a confirmar</small></button>
+      <button class="stop" role="tab" data-mod="m6" aria-selected="false"><b>M6</b> Líder do Futuro <small>a confirmar</small></button>
+    </div>
+  </div>
+</nav>
+
+<div class="tabbar" id="tabbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Seções do módulo">
+      <button class="tab" role="tab" data-tab="visao" aria-selected="true">Visão geral</button>
+      <button class="tab" role="tab" data-tab="prudente" aria-selected="false">Polo SP</button>
+      <button class="tab" role="tab" data-tab="mineiros" aria-selected="false">Polo GO</button>
+      <button class="tab" role="tab" data-tab="mentoria" aria-selected="false">Mentoria dos Coordenadores</button>
+      <button class="tab" role="tab" data-tab="disc" aria-selected="false">Perfil DISC LOTS</button>
+      <button class="tab" role="tab" data-tab="pesquisa" aria-selected="false">Pesquisa de Reação</button>
+      <button class="tab" role="tab" data-tab="materiais" aria-selected="false">Materiais e relatórios</button>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- ================= MÓDULO 1 ================= -->
+<div id="mod-m1">
+
+<!-- ---------- VISÃO GERAL ---------- -->
+<div class="panel" id="pane-visao">
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Módulo I · Outubro/2026</div>
+      <h2>Números do módulo</h2>
+      <p>O Módulo I abriu o programa nas duas unidades, com o mesmo conteúdo e a mesma sequência de atividades, seguido da primeira mentoria com os coordenadores.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">33</div><div class="k">Líderes presentes</div><div class="n">22 no Polo SP · 11 no Polo GO</div></div>
+      <div class="num"><div class="v">97%</div><div class="k">Taxa de presença</div><div class="n">33 de 34 convocados</div></div>
+      <div class="num"><div class="v">7</div><div class="k">Coordenadores na mentoria</div><div class="n">De 8 convocados · 1 falta no Polo SP</div></div>
+      <div class="num"><div class="v">40</div><div class="k">Testes DISC aplicados</div><div class="n">33 líderes + 7 coordenadores</div></div>
+      <div class="num"><div class="v">14</div><div class="k">Atividades práticas</div><div class="n">Jogos, cases, testes e dinâmicas</div></div>
+      <div class="num"><div class="v">12h30</div><div class="k">Carga horária entregue</div><div class="n">5h × 2 turmas + 2h30 de mentoria</div></div>
+      <div class="num"><div class="v">7</div><div class="k">Grupos de trabalho</div><div class="n">4 no Polo SP · 3 no Polo GO</div></div>
+      <div class="num hi"><div class="v">66</div><div class="k">Missões em campo</div><div class="n">2 desafios × 33 líderes, até o M2</div></div>
+      <div class="num hi"><div class="v">9,5</div><div class="k">Nota média de recomendação</div><div class="n">23 respostas · nenhum detrator</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">O que o módulo entrega</div>
+      <h2>Objetivos de aprendizagem</h2>
+      <p>Formulados em quatro verbos de ação, do entendimento para a aplicação. São eles que a gerência deve conseguir observar no turno nas próximas semanas.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Reconhecer</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">O papel do líder operacional e o que muda na transição da técnica para a gestão de pessoas.</p></div>
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Identificar</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">O próprio perfil comportamental DISC, com pontos fortes e pontos de atenção como líder.</p></div>
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Adaptar</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">A forma de passar tarefa, reconhecer e corrigir conforme o perfil de cada liderado.</p></div>
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Assumir</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">Postura protagonista, focada no que está sob o próprio controle, com compromisso de 30 dias.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Estrutura do encontro</div>
+      <h2>Como foram as 5 horas</h2>
+      <p>Mesma estrutura nas duas unidades, em formato de ilhas (grupos de 4 a 5), porque o módulo é majoritariamente vivencial.</p>
+    </div>
+    <div class="card">
+      <div class="tl">
+        <div class="tl-item"><div class="tl-t">00:00<br>00:25</div><div class="tl-b"><h4>Abertura e check-in</h4><p>Combinados de convivência, a rota dos 6 módulos e os objetivos do dia.</p></div></div>
+        <div class="tl-item"><div class="tl-t">00:25<br>01:25</div><div class="tl-b"><h4>O papel do líder</h4><p>Da técnica para a gestão: armadilhas da transição, os três papéis (resultado, pessoas e ponte) e o jogo Chefe ou Líder?</p></div></div>
+        <div class="tl-item"><div class="tl-t">01:25<br>02:15</div><div class="tl-b"><h4>Autoconhecimento</h4><p>Janela de Johari e ponto cego, Espelho Retrovisor e introdução ao DISC.</p></div></div>
+        <div class="tl-item"><div class="tl-t">02:15<br>02:30</div><div class="tl-b"><h4>Intervalo</h4><p>Coffee break.</p></div></div>
+        <div class="tl-item"><div class="tl-t">02:30<br>03:25</div><div class="tl-b"><h4>DISC na prática</h4><p>Os quatro perfis, leitura do relatório individual e jogos de reconhecimento da linguagem de cada perfil.</p></div></div>
+        <div class="tl-item"><div class="tl-t">03:25<br>04:30</div><div class="tl-b"><h4>Autorresponsabilidade</h4><p>Lócus de controle, vítima ou protagonista, os três círculos e o case da Paula.</p></div></div>
+        <div class="tl-item"><div class="tl-t">04:30<br>05:00</div><div class="tl-b"><h4>Fechamento</h4><p>Compromisso de Rota, desafio de 30 dias e avaliação de reação.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">O coração do módulo</div>
+      <h2>As 14 atividades e por que cada uma existe</h2>
+      <p>Nenhuma atividade está no material por ser divertida. Cada uma trabalha uma competência específica e prepara a seguinte. Abaixo, o objetivo técnico de cada uma — é esta a leitura que permite ao RH e à gerência cobrar o resultado certo.</p>
+    </div>
+    <div class="act">
+
+      <div class="act-row"><div class="act-n">01</div><div class="act-b">
+        <h4>Check-in: com quanto combustível você chega? <span class="pill">Abertura</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> aquecer o grupo, criar segurança para falar e mapear a energia real da turma antes de começar. O registro dos "tanques" é comparado no fim do dia e funciona como termômetro de reação.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">02</div><div class="act-b">
+        <h4>Nossos combinados <span class="pill">Grupo</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> construir o contrato de convivência <i>com</i> o grupo, não <i>para</i> o grupo. Inclui o combinado de quem responde pela operação durante o treinamento — o que já é, na prática, um primeiro exercício de delegação.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">03</div><div class="act-b">
+        <h4>O bônus e o ônus da liderança <span class="pill">Grupo</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> gerar identificação emocional com a transição de papel — a emoção abre a porta da memória. Gera também o insumo mais valioso do módulo para a empresa: o que a liderança valoriza e o que a incomoda, dito por ela mesma.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">04</div><div class="act-b">
+        <h4>É papel do líder? <span class="pill">Grupo</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> separar, com 35 cartões recortados, o que é responsabilidade do líder do que não é. Ataca de frente a confusão de papel — tanto o líder que terceiriza para o RH quanto o que assume o que não lhe cabe.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">05</div><div class="act-b">
+        <h4>Autoavaliação das 12 responsabilidades <span class="pill ind">Individual</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> tornar concreto o que está dentro dos três papéis. Cada líder marca o que exerce melhor e o que tem ficado para depois — e essa resposta alimenta a escolha do desafio de 30 dias no fechamento.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">06</div><div class="act-b">
+        <h4>Jogo: Chefe ou Líder? <span class="pill jogo">Jogo</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> diferenciar autoridade de cargo de autoridade conquistada, de forma lúdica e competitiva. As cartas incluem armadilhas deliberadas (comportamentos que parecem bons e criam dependência), para que o debate vá além do óbvio.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">07</div><div class="act-b">
+        <h4>Espelho Retrovisor <span class="pill ind">Individual + trio</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> gerar autopercepção sobre o próprio comportamento em condições normais <i>e</i> sob pressão. A pergunta central — qual a diferença entre o líder do dia bom e o do dia de pressão — prepara diretamente a leitura do DISC.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">08</div><div class="act-b">
+        <h4>Teste DISC e leitura do relatório <span class="pill teste">Teste</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> dar ao líder uma linguagem objetiva sobre o próprio comportamento. Aplicado antes do encontro; os relatórios só são entregues depois da apresentação dos quatro perfis, para que sejam lidos com entendimento e não como nota.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">09</div><div class="act-b">
+        <h4>Meu perfil é o melhor! <span class="pill">Grupo por perfil</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> fazer cada perfil defender o próprio valor para a empresa e nomear com qual perfil tem mais atrito. Transforma a diferença em complementaridade em vez de disputa.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">10</div><div class="act-b">
+        <h4>Jogo: Quem disse isso? <span class="pill jogo">Jogo</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> treinar a leitura do comportamento pela fala. Oito frases típicas da operação; cada equipe aponta o perfil e ganha ponto extra se explicar a pista. Na vida real ninguém traz a letra na testa.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">11</div><div class="act-b">
+        <h4>A Pizza do Turno <span class="pill ind">Individual + trio</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> tornar visível como o líder distribui o próprio tempo e confrontar isso com o papel esperado. Produz o dado consolidado por unidade que está nas abas das turmas.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">12</div><div class="act-b">
+        <h4>Meu turno nos três círculos <span class="pill ind">Individual + trio</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> aplicar controle, influência e preocupação aos cinco problemas reais que mais tiram o sono do líder. Os itens de "influência" que se repetem entre os líderes sobem para a mentoria dos coordenadores — são exatamente onde a liderança tática precisa agir.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">13</div><div class="act-b">
+        <h4>Case: A frente que não fecha a meta <span class="pill case">Case</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> integrar os três blocos num só caso. O grupo reescreve a fala da personagem em linguagem de protagonista e define três ações para a segunda-feira — treinando a passagem da justificativa para o plano.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">14</div><div class="act-b">
+        <h4>Compromisso de Rota e check-out <span class="pill ind">Individual</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> transformar o dia em compromisso observável — o que vou começar, o que vou parar e com quem vou compartilhar. Compromisso público aumenta a chance de execução, e a última linha convida o líder a levá-lo ao próprio coordenador.</p>
+      </div></div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Entre o M1 e o M2</div>
+      <h2>Desafio de aplicabilidade</h2>
+      <p>Duas missões no turno, registradas no Caderno do Líder e relatadas na abertura do Módulo II. É o mecanismo que leva o aprendizado da sala para a operação.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="eyebrow">Missão 1</div>
+        <h4 style="font-size:1.1rem;margin-top:6px">Ajuste o retrovisor</h4>
+        <p style="font-size:.93rem;color:var(--fg-2);margin-top:8px">Perguntar a duas pessoas da equipe: o que eu faço que ajuda você a trabalhar melhor, e o que eu faço que atrapalha? Só ouvir e agradecer, sem se justificar.</p>
+        <p style="font-size:.88rem;color:var(--fg-3);margin-top:10px"><b style="color:var(--fg-2)">Por quê:</b> reduz o ponto cego com a única fonte que o enxerga — a própria equipe. É a missão mais difícil emocionalmente.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Missão 2</div>
+        <h4 style="font-size:1.1rem;margin-top:6px">Saia do círculo da preocupação</h4>
+        <p style="font-size:.93rem;color:var(--fg-2);margin-top:8px">Escolher um problema real do turno, executar uma ação que está no próprio controle e levar uma proposta, com dados, a quem pode influenciar. Registrar o que mudou.</p>
+        <p style="font-size:.88rem;color:var(--fg-3);margin-top:10px"><b style="color:var(--fg-2)">Por quê:</b> treina a fórmula dado + impacto + proposta. O líder passa a chegar ao coordenador com solução, não com reclamação.</p>
+      </div>
+    </div>
+    <div class="note plum" style="margin-top:14px">
+      <h4>O que a coordenação precisa fazer</h4>
+      <p>Quando o líder trouxer a proposta da Missão 2, o coordenador é frequentemente a pessoa procurada. Receber com escuta e dar retorno — mesmo que a resposta seja não — é o que mantém a iniciativa viva. Uma proposta ignorada ensina ao líder que não vale a pena tentar de novo.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ---------- PRUDENTE ---------- -->
+<div class="panel" id="pane-prudente" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Turma presencial · Módulo I</div>
+      <h2>Polo SP</h2>
+      <p>A maior das duas turmas e a mais concentrada em um único perfil comportamental.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">22</div><div class="k">Líderes presentes</div><div class="n">De 23 convocados</div></div>
+      <div class="num"><div class="v">22</div><div class="k">Testes DISC aplicados</div><div class="n">1 ausente não realizou</div></div>
+      <div class="num"><div class="v">4</div><div class="k">Grupos de trabalho</div><div class="n">Na atividade de bônus e ônus</div></div>
+      <div class="num"><div class="v">5h</div><div class="k">Carga horária</div><div class="n">Encontro presencial</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Perfil DISC da turma</h2>
+      <p>Mais da metade dos líderes tem Dominância como perfil predominante. É a turma de ritmo mais rápido do programa.</p></div>
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:12px">Perfil predominante · 22 líderes</div>
+      <div class="bars">
+        <div class="bar-row dd"><div class="lbl">D · Dominância</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">55%</div></div>
+        <div class="bar-row cc"><div class="lbl">C · Conformidade</div><div class="bar-track"><div class="bar-fill" style="width:41.8%"></div></div><div class="val">23%</div></div>
+        <div class="bar-row ss"><div class="lbl">S · Estabilidade</div><div class="bar-track"><div class="bar-fill" style="width:32.7%"></div></div><div class="val">18%</div></div>
+        <div class="bar-row ii"><div class="lbl">I · Influência</div><div class="bar-track"><div class="bar-fill" style="width:9.1%"></div></div><div class="val">5%</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">12 líderes D · 5 C · 4 S · 1 I. Barras proporcionais ao maior valor da turma.</p>
+      <div class="eyebrow" style="margin:22px 0 12px">Média de pontos por fator</div>
+      <div class="bars">
+        <div class="bar-row dd"><div class="lbl">D</div><div class="bar-track"><div class="bar-fill" style="width:74.6%"></div></div><div class="val">26,1</div></div>
+        <div class="bar-row cc"><div class="lbl">C</div><div class="bar-track"><div class="bar-fill" style="width:64.3%"></div></div><div class="val">22,5</div></div>
+        <div class="bar-row ss"><div class="lbl">S</div><div class="bar-track"><div class="bar-fill" style="width:60.9%"></div></div><div class="val">21,3</div></div>
+        <div class="bar-row ii"><div class="lbl">I</div><div class="bar-track"><div class="bar-fill" style="width:58.3%"></div></div><div class="val">20,4</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">Escala de 0 a 35 pontos. A média é do grupo, não de indivíduos.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>A Pizza do Turno</h2>
+      <p>Resposta à pergunta "quais são as 3 razões que mais consomem o seu tempo no turno?". Cada percentual é a fatia de citações da turma.</p></div>
+    <div class="card">
+      <div class="bars">
+        <div class="bar-row neutral"><div class="lbl">Conflitos e desvio de comportamento</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">19%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Equipamentos e veículos</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">19%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Falta de informação e comunicação</div><div class="bar-track"><div class="bar-fill" style="width:89.5%"></div></div><div class="val">17%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Burocracia e sistemas</div><div class="bar-track"><div class="bar-fill" style="width:78.9%"></div></div><div class="val">15%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Reuniões</div><div class="bar-track"><div class="bar-fill" style="width:78.9%"></div></div><div class="val">15%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Apagando incêndio</div><div class="bar-track"><div class="bar-fill" style="width:52.6%"></div></div><div class="val">10%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Fazendo no lugar da equipe</div><div class="bar-track"><div class="bar-fill" style="width:26.3%"></div></div><div class="val">5%</div></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:14px">
+      <h4>O dado que distingue esta unidade</h4>
+      <p>Conflitos e desvio de comportamento consomem 19% do tempo declarado — contra 6% no Polo GO. É o triplo. Somado aos 17% de falta de informação, significa que quase 4 de cada 10 horas de atenção do líder do Polo SP vão para relação e comunicação, não para a operação em si. Esse é o terreno direto do Módulo II.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Bônus e ônus: o que esta turma disse</h2>
+      <p>Temas levantados pelos 4 grupos de Polo SP na atividade de abertura.</p></div>
+    <div class="bo">
+      <div class="bo-col pos"><h4>Bônus</h4><ul>
+        <li><span>Segurança em primeiro lugar: direito de recusa apoiado pela coordenação</span></li>
+        <li><span>Remuneração e benefícios em dia</span></li>
+        <li><span>Autonomia e poder de decisão</span></li>
+        <li><span>Desenvolvimento e oportunidade de crescer</span></li>
+        <li><span>Fazer a diferença e ser multiplicador</span></li>
+      </ul></div>
+      <div class="bo-col neg"><h4>Ônus</h4><ul>
+        <li><span>Comunicação e relação com outras áreas</span></li>
+        <li><span>Falta de estrutura e demora de recursos (peças, EPIs)</span></li>
+        <li><span>Falta de treinamento para os líderes</span></li>
+        <li><span>Pressão, cobrança e não conseguir desligar do trabalho</span></li>
+        <li><span>Dar advertências, suspensão ou demissão</span></li>
+        <li><span>Dificuldade em manter equipe (safristas)</span></li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Percepções da facilitadora</h2></div>
+    <div class="note">
+      <p>Turma mais reservada na abertura, com participação que cresceu ao longo do dia e se soltou especialmente nas atividades em grupo. A concentração de perfis D fica evidente no ritmo: as respostas vêm rápido, o grupo decide antes de terminar de ouvir o enunciado e tem pouca paciência com exercícios de reflexão individual.</p>
+      <p>O dado de conflitos (19% do tempo) foi confirmado em sala: a dificuldade de corrigir o antigo colega e de dar advertência apareceu em mais de um grupo. É o ponto de maior retorno para o Módulo II.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ---------- MINEIROS ---------- -->
+<div class="panel" id="pane-mineiros" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Turma presencial · Módulo I</div>
+      <h2>Polo GO</h2>
+      <p>Turma menor e com distribuição de perfis mais equilibrada, puxada por método e estabilidade.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">11</div><div class="k">Líderes presentes</div><div class="n">Turma integral</div></div>
+      <div class="num"><div class="v">11</div><div class="k">Testes DISC aplicados</div><div class="n">100% da turma</div></div>
+      <div class="num"><div class="v">3</div><div class="k">Grupos de trabalho</div><div class="n">Na atividade de bônus e ônus</div></div>
+      <div class="num"><div class="v">5h</div><div class="k">Carga horária</div><div class="n">Encontro presencial</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Perfil DISC da turma</h2>
+      <p>Nenhum perfil domina. O C aparece à frente, e o S tem aqui a maior média do programa.</p></div>
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:12px">Perfil predominante · 11 líderes</div>
+      <div class="bars">
+        <div class="bar-row cc"><div class="lbl">C · Conformidade</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">36%</div></div>
+        <div class="bar-row dd"><div class="lbl">D · Dominância</div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><div class="val">27%</div></div>
+        <div class="bar-row ss"><div class="lbl">S · Estabilidade</div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><div class="val">27%</div></div>
+        <div class="bar-row ii"><div class="lbl">I · Influência</div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><div class="val">9%</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">4 líderes C · 3 D · 3 S · 1 I. Um líder empatou entre I e S e foi classificado como I.</p>
+      <div class="eyebrow" style="margin:22px 0 12px">Média de pontos por fator</div>
+      <div class="bars">
+        <div class="bar-row dd"><div class="lbl">D</div><div class="bar-track"><div class="bar-fill" style="width:69.4%"></div></div><div class="val">24,3</div></div>
+        <div class="bar-row ss"><div class="lbl">S</div><div class="bar-track"><div class="bar-fill" style="width:66.9%"></div></div><div class="val">23,4</div></div>
+        <div class="bar-row cc"><div class="lbl">C</div><div class="bar-track"><div class="bar-fill" style="width:64.6%"></div></div><div class="val">22,6</div></div>
+        <div class="bar-row ii"><div class="lbl">I</div><div class="bar-track"><div class="bar-fill" style="width:55.4%"></div></div><div class="val">19,4</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">Escala de 0 a 35 pontos. O I de 19,4 é a menor média de qualquer fator em qualquer grupo do programa.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>A Pizza do Turno</h2>
+      <p>Resposta à pergunta "quais são as 3 razões que mais consomem o seu tempo no turno?". Cada percentual é a fatia de citações da turma.</p></div>
+    <div class="card">
+      <div class="bars">
+        <div class="bar-row neutral"><div class="lbl">Equipamentos e veículos</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">32%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Burocracia e sistemas</div><div class="bar-track"><div class="bar-fill" style="width:81.3%"></div></div><div class="val">26%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Apagando incêndio</div><div class="bar-track"><div class="bar-fill" style="width:65.6%"></div></div><div class="val">21%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Falta de informação e comunicação</div><div class="bar-track"><div class="bar-fill" style="width:28.1%"></div></div><div class="val">9%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Conflitos e desvio de comportamento</div><div class="bar-track"><div class="bar-fill" style="width:18.8%"></div></div><div class="val">6%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Reuniões</div><div class="bar-track"><div class="bar-fill" style="width:9.4%"></div></div><div class="val">3%</div></div>
+        <div class="bar-row neutral"><div class="lbl">Fazendo no lugar da equipe</div><div class="bar-track"><div class="bar-fill" style="width:9.4%"></div></div><div class="val">3%</div></div>
+      </div>
+    </div>
+    <div class="note good" style="margin-top:14px">
+      <h4>Um sinal positivo de autocrítica</h4>
+      <p>"Apagando incêndio: falta de planejamento" aparece com 21% no Polo GO contra 10% no Polo SP. Não significa que a unidade apague mais incêndios — significa que esta turma reconhece com mais facilidade a falta de planejamento como causa, em vez de atribuir tudo a fatores externos. É a leitura mais madura entre as duas turmas e deve ser aproveitada.</p>
+    </div>
+    <div class="note warn" style="margin-top:12px">
+      <h4>E um ponto a investigar</h4>
+      <p>Conflitos aparecem com apenas 6% aqui. A pergunta honesta é se a turma tem menos conflito ou se fala menos sobre ele. Polo GO concentra os perfis S e C, que tendem a evitar o confronto e a adiar a conversa difícil. Vale a coordenação checar isso no dia a dia antes de concluir que o tema não existe.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Bônus e ônus: o que esta turma disse</h2>
+      <p>Temas levantados pelos 3 grupos do Polo GO na atividade de abertura.</p></div>
+    <div class="bo">
+      <div class="bo-col pos"><h4>Bônus</h4><ul>
+        <li><span>Segurança em primeiro lugar: direito de recusa apoiado pela coordenação</span></li>
+        <li><span>Remuneração e benefícios em dia</span></li>
+        <li><span>Autonomia e poder de decisão</span></li>
+        <li><span>Desenvolvimento e oportunidade de crescer</span></li>
+        <li><span>Jornada 6x2</span></li>
+      </ul></div>
+      <div class="bo-col neg"><h4>Ônus</h4><ul>
+        <li><span>Premiação só para o motorista, não para o líder</span></li>
+        <li><span>Plano de carreira e participação nos lucros</span></li>
+        <li><span>Abertura de desvios desnecessários no sistema</span></li>
+        <li><span>Responsabilidade pelo transporte dos colaboradores</span></li>
+        <li><span>Falta de treinamento para os líderes</span></li>
+        <li><span>Pressão, cobrança e não conseguir desligar do trabalho</span></li>
+        <li><span>Dar advertências, suspensão ou demissão</span></li>
+        <li><span>Dificuldade em manter equipe (safristas)</span></li>
+      </ul></div>
+    </div>
+    <div class="note warn" style="margin-top:14px">
+      <h4>O tema que os três grupos tocaram</h4>
+      <p>Premiação. Por caminhos diferentes — reconhecimento pelo esforço, bonificação por atividades, meritocracia, plano de carreira, participação nos lucros —, os três grupos chegaram ao mesmo lugar: o motorista tem prêmio, o líder não. É o líder quem organiza a escala, cobra a meta e resolve o problema do turno, e vê o reconhecimento financeiro parar na equipe que ele lidera.</p>
+      <p>Este é um ponto de política de empresa, não de coordenação. A recomendação é que a demanda suba estruturada, com dado e proposta, e que o grupo receba retorno — mesmo que a resposta seja não. O silêncio é o que mais custa aqui.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Percepções da facilitadora</h2></div>
+    <div class="note">
+      <p>Turma mais aberta e participativa que a do Polo SP, com conversa fluindo desde o início e disposição para expor dificuldade real. O ritmo é mais lento e mais cuidadoso: pedem clareza antes de agir, querem saber a regra e conferem o enunciado — comportamento coerente com a concentração de perfis C e S.</p>
+      <p>A dor de reconhecimento apareceu de forma espontânea e repetida, nos três grupos. Vale registrar que ela convive com um reconhecimento genuíno da base: segurança, remuneração em dia e autonomia foram citados como bônus pela própria turma.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ---------- MENTORIA ---------- -->
+<div class="panel" id="pane-mentoria" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Sessão online · Módulo I</div>
+      <h2>Mentoria dos Coordenadores</h2>
+      <p>Encontro de 2h30 com os coordenadores das duas unidades, realizado depois dos treinamentos presenciais. Dos 8 convocados, 7 participaram. O propósito é duplo: desenvolver a liderança tática nos mesmos temas e prepará-la para sustentar a mudança de comportamento dos seus líderes.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">7</div><div class="k">Coordenadores presentes</div><div class="n">De 8 convocados · 1 falta no Polo SP</div></div>
+      <div class="num"><div class="v">2h30</div><div class="k">Duração</div><div class="n">Sessão online</div></div>
+      <div class="num"><div class="v">7</div><div class="k">DISC respondidos</div><div class="n">1 resultado pendente</div></div>
+      <div class="num"><div class="v">7</div><div class="k">Relatórios individuais</div><div class="n">Perfil próprio + equipe</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Roteiro da sessão</h2></div>
+    <div class="grid g3">
+      <div class="card"><div class="eyebrow">01</div><h4 style="font-size:1rem;margin-top:6px">Conhecer o conteúdo</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">O que os líderes trabalharam no Módulo I, vivido em miniatura: papel do líder, chefe e líder, lócus de controle, três círculos e o case da Paula.</p></div>
+      <div class="card"><div class="eyebrow">02</div><h4 style="font-size:1rem;margin-top:6px">Ver os dados do grupo</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">DISC das duas turmas, DISC da própria coordenação, pizza do turno, bônus e ônus, gaps e pontos de atenção — tudo consolidado, sem nomes de líderes.</p></div>
+      <div class="card"><div class="eyebrow">03</div><h4 style="font-size:1rem;margin-top:6px">Combinar a aplicação</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">Sinais de alerta de quem não está aplicando, perguntas de acompanhamento das duas missões e compromisso de 30 dias de cada coordenador.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Perfil DISC da coordenação</h2>
+      <p>Resultado parcial, com 7 dos 8 coordenadores. A coordenação pontua mais alto que os líderes em todos os fatores, com destaque para Dominância.</p></div>
+    <div class="disc4">
+      <div class="dc d"><div class="ltr">D</div><div class="nm">Dominância</div><div class="big">2</div><div class="cap">coordenadores · média 31,1</div></div>
+      <div class="dc c"><div class="ltr">C</div><div class="nm">Conformidade</div><div class="big">2</div><div class="cap">coordenadores · média 26,8</div></div>
+      <div class="dc s"><div class="ltr">S</div><div class="nm">Estabilidade</div><div class="big">2</div><div class="cap">coordenadores · média 21,4</div></div>
+      <div class="dc i"><div class="ltr">I</div><div class="nm">Influência</div><div class="big">1</div><div class="cap">coordenadora · média 20,7</div></div>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <p>Dois fatos valem destaque. O <b>D aparece como primeiro ou segundo fator em seis dos sete</b> coordenadores: decisão e cobrança são a marca deste grupo. E o <b>I segue com a menor média (20,7)</b> mesmo havendo uma coordenadora de perfil I — exatamente o mesmo ponto fraco dos líderes.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O encontro dos dois níveis</h2>
+      <p>Cruzamento entre o DISC da coordenação (7 de 8) e o consolidado dos 33 líderes.</p></div>
+    <div class="grid g2">
+      <div class="card"><h4 style="font-size:1rem">O I é raro dos dois lados</h4><p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Dois líderes em 33 e uma coordenadora em 7. Reconhecer e cuidar do clima vira combinado explícito — ou não acontece.</p></div>
+      <div class="card"><h4 style="font-size:1rem">Ritmos diferentes</h4><p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">O líder D quer executar; a coordenação C e S quer entender antes. A solução prática é definir o que o líder decide sozinho e o que traz antes.</p></div>
+      <div class="card"><h4 style="font-size:1rem">Perfil repetido dobra o risco</h4><p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Coordenador D com time D decide rápido e escuta pouco. Coordenador C com time C fica correto e lento. Sem contraponto natural no grupo.</p></div>
+      <div class="card"><h4 style="font-size:1rem">Perfil oposto exige tradução</h4><p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Coordenador S com líder D precisa sustentar a firmeza. Coordenador C com líder D precisa dizer o essencial e soltar o resto.</p></div>
+    </div>
+    <div class="note good" style="margin-top:14px"><p>Não é falha de ninguém: é diferença de perfil. O que resolve não é mudar o jeito de ser de cada um, é combinar as regras do jogo.</p></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>A equipe de líderes de cada coordenador</h2>
+      <p>Perfil predominante de cada líder, agrupado por coordenador. Sem nomes de líderes e sem resultados individuais.</p></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Coordenador</th><th>Unidade</th><th>Líderes</th><th>Perfis predominantes</th><th>Fator menos presente</th></tr></thead>
+        <tbody>
+          <tr><td>Clovis Amaral Neto</td><td>SP</td><td class="num-c">8</td><td class="num-c">5 D · 2 S · 1 C</td><td>I · influência</td></tr>
+          <tr><td>Edmo José Garcia</td><td>SP</td><td class="num-c">7</td><td class="num-c">3 C · 2 D · 1 S · 1 I</td><td>C · conformidade</td></tr>
+          <tr><td>Dione Gomes Costa</td><td>SP</td><td class="num-c">2</td><td class="num-c">1 D · 1 S</td><td>C · conformidade</td></tr>
+          <tr><td>Keythy Keller A. L. de Alencar</td><td>SP</td><td class="num-c">1</td><td class="num-c">1 D</td><td>I · influência</td></tr>
+          <tr><td>Lennon Kevin Marreira de Souza</td><td>SP</td><td class="num-c">1</td><td class="num-c">1 D</td><td>I · influência</td></tr>
+          <tr><td>Juliano Nunes Rezende</td><td>GO</td><td class="num-c">5</td><td class="num-c">2 D · 2 C · 1 I</td><td>I · influência</td></tr>
+          <tr><td>Murillo Pires Nunes</td><td>SP e GO</td><td class="num-c">5</td><td class="num-c">3 C · 1 D · 1 S</td><td>I · influência</td></tr>
+          <tr><td>Peterval Marcelo dos Santos</td><td>SP e GO</td><td class="num-c">4</td><td class="num-c">2 S · 1 D · 1 sem teste</td><td>I · influência</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--fg-3);margin-top:10px">32 líderes vinculados a um coordenador, mais 1 teste cujo coordenador ainda não consta na relação. "Fator menos presente" é a letra com a menor média de pontos do time — o comportamento que menos aparece de forma natural e que o coordenador precisa cobrir, lembrar e ensinar.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Sinais de alerta: quando o líder não está aplicando</h2>
+      <p>Cada sinal vem de um conceito do Módulo I. A resposta é apoio, não punição — o objetivo é ajudar o líder a escolher outro comportamento.</p></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>O que você ouve ou vê</th><th>Como responder</th></tr></thead>
+        <tbody>
+          <tr><td>"Eu sou assim mesmo."</td><td>Lembrar que perfil explica, mas não justifica. Pedir um comportamento observável para a semana.</td></tr>
+          <tr><td>A culpa é da usina, da oficina, do sistema.</td><td>Perguntar o que está no controle e o que está na influência dele.</td></tr>
+          <tr><td>Missões sem exemplo concreto ou deixadas para depois.</td><td>Combinar dia e momento, e pedir um exemplo na próxima conversa.</td></tr>
+          <tr><td>Não conseguir desapegar do operacional.</td><td>Perguntar quem poderia aprender aquilo e reservar tempo para ensinar.</td></tr>
+          <tr><td>Evita cobrar o antigo colega ou o amigo.</td><td>Ensaiar a conversa antes e reforçar que firmeza justa protege e gera confiança na equipe.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Perguntas de acompanhamento das missões</h2></div>
+    <div class="grid g2">
+      <div class="card"><div class="eyebrow">Missão 1 · Ajuste o retrovisor</div>
+        <ul style="margin:10px 0 0;padding-left:18px;font-size:.92rem;color:var(--fg-2)">
+          <li style="margin-top:6px">O que sua equipe disse que ajuda? E o que atrapalha?</li>
+          <li style="margin-top:6px">O que você ouviu que mais surpreendeu?</li>
+          <li style="margin-top:6px">O que você vai ajustar primeiro?</li>
+        </ul></div>
+      <div class="card"><div class="eyebrow">Missão 2 · Saia do círculo da preocupação</div>
+        <ul style="margin:10px 0 0;padding-left:18px;font-size:.92rem;color:var(--fg-2)">
+          <li style="margin-top:6px">Qual problema você escolheu?</li>
+          <li style="margin-top:6px">Qual ação estava no seu controle e o que mudou?</li>
+          <li style="margin-top:6px">Que dado, impacto e proposta você traz para mim? O que precisa de mim para destravar?</li>
+        </ul></div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ---------- DISC ---------- -->
+<div class="panel" id="pane-disc" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Análise comportamental · Módulo I</div>
+      <h2>Perfil DISC da liderança LOTS</h2>
+      <p>Retrato consolidado dos 33 líderes operacionais das duas unidades e dos 7 coordenadores com resultado. Nenhum dado individual é apresentado: o DISC descreve comportamento observável, não inteligência, caráter ou competência técnica, e não serve como instrumento de avaliação de desempenho.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">40</div><div class="k">Testes aplicados</div><div class="n">33 líderes + 7 coordenadores</div></div>
+      <div class="num"><div class="v">45%</div><div class="k">Líderes com perfil D</div><div class="n">15 de 33</div></div>
+      <div class="num"><div class="v">72%</div><div class="k">Foco em tarefa (D + C)</div><div class="n">24 de 33 líderes</div></div>
+      <div class="num hi"><div class="v">6%</div><div class="k">Líderes com perfil I</div><div class="n">2 de 33 — o maior gap</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Distribuição consolidada</h2>
+      <p>Quase três em cada quatro líderes têm D ou C como perfil predominante: foco em tarefa, resultado e regra.</p></div>
+    <div class="disc4">
+      <div class="dc d">
+        <div class="ltr">D</div><div class="nm">Dominância</div>
+        <div class="big">45%</div><div class="cap">15 líderes · 12 SP, 3 GO</div>
+        <ul><li>Direto, decidido, competitivo</li><li>Foco em tarefa · ritmo rápido</li><li>Sob pressão: fica autoritário</li></ul>
+      </div>
+      <div class="dc c">
+        <div class="ltr">C</div><div class="nm">Conformidade</div>
+        <div class="big">27%</div><div class="cap">9 líderes · 5 SP, 4 GO</div>
+        <ul><li>Analítico, preciso, cauteloso</li><li>Foco em tarefa · ritmo moderado</li><li>Sob pressão: trava e critica</li></ul>
+      </div>
+      <div class="dc s">
+        <div class="ltr">S</div><div class="nm">Estabilidade</div>
+        <div class="big">21%</div><div class="cap">7 líderes · 4 SP, 3 GO</div>
+        <ul><li>Calmo, leal, paciente</li><li>Foco em pessoas · ritmo moderado</li><li>Sob pressão: cede e se cala</li></ul>
+      </div>
+      <div class="dc i">
+        <div class="ltr">I</div><div class="nm">Influência</div>
+        <div class="big">6%</div><div class="cap">2 líderes · 1 SP, 1 GO</div>
+        <ul><li>Comunicativo, otimista, sociável</li><li>Foco em pessoas · ritmo rápido</li><li>Sob pressão: desorganiza-se</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Comparativo entre as unidades</h2>
+      <p>SP concentra o D; GO distribui os perfis, com peso em método e estabilidade.</p></div>
+    <div class="card">
+      <div class="pair">
+        <div class="pair-row"><div class="lbl">D · Dominância</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:100%"></div></div><div class="v">55%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:49.1%"></div></div><div class="v">27%</div></div></div>
+        <div class="pair-row"><div class="lbl">C · Conformidade</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:41.8%"></div></div><div class="v">23%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:65.5%"></div></div><div class="v">36%</div></div></div>
+        <div class="pair-row"><div class="lbl">S · Estabilidade</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:32.7%"></div></div><div class="v">18%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:49.1%"></div></div><div class="v">27%</div></div></div>
+        <div class="pair-row"><div class="lbl">I · Influência</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:9.1%"></div></div><div class="v">5%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:16.4%"></div></div><div class="v">9%</div></div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:14px">Barras na mesma escala (0 a 55%), para que as duas unidades sejam comparáveis entre si. 22 líderes no Polo SP, 11 no Polo GO — turmas de tamanhos diferentes, então leia como retrato de cada turma e não como ranking entre unidades.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Médias por fator, nos três grupos</h2>
+      <p>Média de pontos do grupo em cada fator, escala de 0 a 35. Mostra a intensidade, não só a letra predominante.</p></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Grupo</th><th>D</th><th>I</th><th>S</th><th>C</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>Líderes · Polo SP/SP (22)</td><td class="num-c">26,1</td><td class="num-c">20,4</td><td class="num-c">21,3</td><td class="num-c">22,5</td><td>Ritmo, cobrança e decisão rápida</td></tr>
+          <tr><td>Líderes · Polo GO (11)</td><td class="num-c">24,3</td><td class="num-c">19,4</td><td class="num-c">23,4</td><td class="num-c">22,6</td><td>Método, apoio e cautela antes de agir</td></tr>
+          <tr><td>Coordenação (7 de 8)</td><td class="num-c">31,1</td><td class="num-c">20,7</td><td class="num-c">21,4</td><td class="num-c">26,8</td><td>Decisão e cobrança como marca do grupo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--fg-3);margin-top:10px">Em todos os três grupos o I é o fator de menor média. É o único fator em que isso se repete sem exceção.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Prós: a força deste time</h2>
+      <p>O que a composição atual entrega bem — e que precisa ser preservado, não corrigido.</p></div>
+    <div class="grid g2">
+      <div class="card" style="border-top:3px solid var(--s)">
+        <h4 style="font-size:1.02rem">Decisão sob pressão</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Com 45% de perfis D, a liderança decide rápido, tem senso de urgência e enfrenta problema de frente. Numa operação de transporte em que a frente para em 40 minutos, isso é vantagem competitiva real.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--s)">
+        <h4 style="font-size:1.02rem">Rigor com norma e segurança</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Os 27% de perfis C garantem procedimento cumprido, risco antecipado e indicador analisado. Em transporte pesado, esse é o perfil que sustenta a cultura de segurança no detalhe.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--s)">
+        <h4 style="font-size:1.02rem">A combinação D + C é funcional</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Ter alguém que decide e alguém que confere, no mesmo turno, é uma composição favorável para a operação. O risco não está na combinação em si, mas na ausência do terceiro elemento.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--s)">
+        <h4 style="font-size:1.02rem">Estabilidade onde ela é necessária</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Os 21% de perfis S são os líderes que o motorista procura quando tem um problema pessoal. No Polo GO, onde o S tem a maior média do programa (23,4), esse é um ativo de retenção.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Contras: os riscos que esta composição cria</h2>
+      <p>Em DISC, o ponto de atenção é quase sempre um ponto forte usado em excesso.</p></div>
+    <div class="grid g2">
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <h4 style="font-size:1.02rem">Equipe que obedece e não traz problema</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">O D sob pressão fica exigente e controlador, cobra de forma dura e decide sozinho. No Polo SP, com 55% de D, o risco agregado é uma liderança que produz obediência imediata e para de receber informação de baixo — justamente o que esconde desvio de segurança.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <h4 style="font-size:1.02rem">Decisão travada esperando a regra</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">O C sob pressão fecha-se, apega-se ao procedimento e espera mais informação. No Polo GO, com C e S somando 63%, o risco é o oposto: o líder que não decide sem autorização e adia a conversa difícil para não criar clima.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <h4 style="font-size:1.02rem">O papel "Pessoas" fica descoberto</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">O módulo define três papéis indelegáveis do líder: resultado, pessoas e ponte. Com 72% de foco em tarefa, o papel de Pessoas — orientar, desenvolver, reconhecer e cuidar do clima — é o que menos sai naturalmente deste grupo.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <h4 style="font-size:1.02rem">Coordenação sem contraponto</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">A coordenação pontua 31,1 em D e 26,8 em C — acima dos líderes nos dois fatores. Quando o nível tático reforça a mesma tendência do operacional em vez de equilibrá-la, não há ninguém no sistema para fazer o contraponto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Gaps: onde o sistema está descoberto</h2>
+      <p>Cinco lacunas identificadas no cruzamento dos dados. A ordem é de magnitude.</p></div>
+    <div class="gap-list">
+
+      <div class="gap">
+        <h4>1. Gap de Influência <span class="mag">6% dos líderes · menor média nos 3 grupos</span></h4>
+        <p>Dois líderes em 33 e uma coordenadora em sete. O I é o fator de menor média no Polo SP (20,4), no Polo GO (19,4) e na coordenação (20,7) — sem uma única exceção. Esse é o comportamento de entusiasmo, reconhecimento e comunicação do positivo.</p>
+        <p><b>Consequência prática:</b> reconhecer, celebrar e cuidar do clima não vão acontecer espontaneamente nesta liderança. Se não forem transformados em rotina combinada e cobrada, simplesmente não ocorrerão — e a dor de reconhecimento levantada pelos líderes do Polo GO continuará crescendo.</p>
+      </div>
+
+      <div class="gap">
+        <h4>2. Gap de escuta no Polo SP <span class="mag">S em 18%, o menor do programa</span></h4>
+        <p>A unidade com mais D é também a com menos S. A turma declara gastar 19% do tempo com conflitos e desvio de comportamento — o triplo do Polo GO — e mais 17% com falta de informação e comunicação.</p>
+        <p><b>Consequência prática:</b> o foco de desenvolvimento no Polo SP é escuta, clima e delegação. O Módulo II (feedback e conversas difíceis) chega no momento certo, mas o risco é que uma turma de D trate feedback como mais uma ferramenta de cobrança.</p>
+      </div>
+
+      <div class="gap">
+        <h4>3. Gap de velocidade no Polo GO <span class="mag">C + S em 63%</span></h4>
+        <p>Perfil predominante C em 36% da turma, com a maior média de S do programa. É o grupo mais cauteloso: quer a regra certa antes de agir e evita o confronto.</p>
+        <p><b>Consequência prática:</b> o foco aqui é o oposto do Polo SP — ritmo de decisão e tolerância ao erro. E o número de conflitos (6%) merece verificação: pode indicar menos conflito ou menos disposição para falar dele.</p>
+      </div>
+
+      <div class="gap">
+        <h4>4. Gap de espelho na coordenação <span class="mag">afeta ao menos 3 das 8 equipes</span></h4>
+        <p>Em várias equipes o coordenador tem o mesmo perfil predominante da maioria do seu time: coordenador D com cinco líderes D, coordenador C com três líderes C, coordenador DC com o único líder também DC. Onde coordenador e equipe se parecem, a força vira excesso e ninguém no grupo faz o contraponto.</p>
+        <p><b>Consequência prática:</b> essas equipes precisam de contraponto vindo de fora — de outro coordenador, do RH ou de regra combinada —, porque ele não surgirá de dentro.</p>
+      </div>
+
+      <div class="gap">
+        <h4>5. Gap de dado <span class="mag">1 coordenador + 1 líder sem teste</span></h4>
+        <p>Um coordenador ainda não devolveu o resultado e um líder do Polo SP esteve ausente no treinamento. No caso de uma das equipes, de quatro líderes, um perfil desconhecido representa 25% do time.</p>
+        <p><b>Consequência prática:</b> fechar esses dois testes antes do Módulo II completa o mapa e permite recalcular as médias da coordenação, hoje parciais.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Sugestões para o RH e a gerência</h2>
+      <p>Oito recomendações derivadas diretamente dos dados acima. As primeiras são aplicáveis já no intervalo até o Módulo II.</p></div>
+    <div class="rec">
+
+      <div class="rec-item"><div class="rec-n">1</div><div class="rec-b">
+        <h4>Transformar reconhecimento em rotina, não em temperamento</h4>
+        <p>Como o fator I é o mais escasso em toda a cadeia, o reconhecimento precisa de um mecanismo. Uma sugestão concreta: cada líder registra, uma vez por semana, um reconhecimento específico a um membro da equipe — o que a pessoa fez, não "parabéns pelo trabalho". O coordenador pergunta por ele na conversa de acompanhamento. É pequeno, é cobrável e não depende de ninguém mudar de personalidade.</p>
+        <div class="who"><span class="pill sp">RH</span><span class="pill go">Gerência</span></div>
+      </div></div>
+
+      <div class="rec-item"><div class="rec-n">2</div><div class="rec-b">
+        <h4>Definir a régua de decisão de cada líder</h4>
+        <p>Escrever, por área, o que o líder decide sozinho e o que traz antes ao coordenador. Esta única medida resolve os dois riscos opostos ao mesmo tempo: o atropelo do D no Polo SP e a paralisia do C no Polo GO. Hoje a régua é implícita e cada dupla negocia a sua.</p>
+        <div class="who"><span class="pill go">Gerência</span><span class="pill">Coordenação</span></div>
+      </div></div>
+
+      <div class="rec-item"><div class="rec-n">3</div><div class="rec-b">
+        <h4>Diferenciar o foco de desenvolvimento por unidade</h4>
+        <p>Os dois polos precisam de ênfases distintas, embora o conteúdo dos módulos seja o mesmo. Polo SP — escuta, clima e delegação. Polo GO — velocidade de decisão e tolerância ao erro. Vale orientar os coordenadores a cobrarem coisas diferentes nas conversas de acompanhamento de cada unidade.</p>
+        <div class="who"><span class="pill sp">RH</span><span class="pill">Coordenação</span></div>
+      </div></div>
+
+      <div class="rec-item"><div class="rec-n">4</div><div class="rec-b">
+        <h4>Usar a complementaridade de propósito</h4>
+        <p>Formar duplas de aprendizagem entre perfis opostos (D com S, C com I) nas atividades dos próximos módulos e nos grupos de melhoria. A atividade "Meu perfil é o melhor!" já levou cada perfil a nomear com quem tem mais atrito; o passo seguinte é a empresa organizar o trabalho aproveitando essa complementaridade.</p>
+        <div class="who"><span class="pill sp">RH</span><span class="pill go">Gerência</span></div>
+      </div></div>
+
+      <div class="rec-item"><div class="rec-n">5</div><div class="rec-b">
+        <h4>Dar encaminhamento formal à demanda de premiação</h4>
+        <p>É o ônus mais citado no Polo GO, levantado pelos três grupos por caminhos diferentes, e recai justamente sobre o fator mais escasso do grupo: reconhecimento. A recomendação não é criar política nova — é dar retorno estruturado, com dado e proposta, e comunicar a decisão mesmo quando ela for negativa. Demanda sem resposta ensina ao líder que trazer problema não adianta, o que contradiz diretamente a Missão 2.</p>
+        <div class="who"><span class="pill sp">RH</span><span class="pill go">Gerência</span></div>
+      </div></div>
+
+      <div class="rec-item"><div class="rec-n">6</div><div class="rec-b">
+        <h4>Proteger o que já funciona: o direito de recusa</h4>
+        <p>Os líderes das duas unidades confirmaram que "segurança em primeiro lugar" não é discurso: quando exercem o direito de recusa, têm o apoio da coordenação. Este é o ativo mais valioso do levantamento e o mais frágil. Basta um episódio em que a recusa seja recebida com ironia ou pressão para o líder aprender que o discurso mudou. Vale medir e dar visibilidade a esse comportamento.</p>
+        <div class="who"><span class="pill go">Gerência</span><span class="pill">Coordenação</span></div>
+      </div></div>
+
+      <div class="rec-item"><div class="rec-n">7</div><div class="rec-b">
+        <h4>Considerar o equilíbrio do time nas próximas promoções</h4>
+        <p>Com 45% de D na liderança operacional, promover sempre pelo mesmo critério técnico tende a reforçar a concentração. Não se trata de selecionar por perfil — o DISC não serve para isso —, e sim de a gerência saber qual composição está formando e onde o time já está saturado.</p>
+        <div class="who"><span class="pill sp">RH</span><span class="pill go">Gerência</span></div>
+      </div></div>
+
+      <div class="rec-item"><div class="rec-n">8</div><div class="rec-b">
+        <h4>Fechar o mapa antes do Módulo II</h4>
+        <p>Aplicar o teste no coordenador pendente e no líder que esteve ausente. São dois testes que completam o retrato e permitem recalcular as médias da coordenação, hoje parciais com 7 de 8 resultados.</p>
+        <div class="who"><span class="pill sp">RH</span></div>
+      </div></div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Uso responsável do DISC</h2></div>
+    <div class="grid g4">
+      <div class="card"><h4 style="font-size:.98rem">Não rotule pessoas</h4><p style="font-size:.88rem;color:var(--fg-2);margin-top:7px">"Ele é D, não adianta falar" e "ela é S, não aguenta pressão" são frases proibidas.</p></div>
+      <div class="card"><h4 style="font-size:.98rem">Não use para excluir</h4><p style="font-size:.88rem;color:var(--fg-2);margin-top:7px">Não serve para escolher favoritos, excluir alguém de uma tarefa, avaliar desempenho ou justificar decisões de pessoal.</p></div>
+      <div class="card"><h4 style="font-size:.98rem">Todo perfil pode aprender</h4><p style="font-size:.88rem;color:var(--fg-2);margin-top:7px">Comportamento é treinável. O jeito natural é o ponto de partida, não o ponto final.</p></div>
+      <div class="card"><h4 style="font-size:.98rem">O relatório é de quem fez</h4><p style="font-size:.88rem;color:var(--fg-2);margin-top:7px">O resultado individual é confidencial. Conversar sobre perfis entre colegas é saudável e facilita a relação — desde que seja escolha de cada um.</p></div>
+    </div>
+    <p style="font-size:.8rem;color:var(--fg-3);margin-top:16px">Modelo DISC criado pelo psicólogo William Moulton Marston (1928). Descreve quatro estilos de comportamento observável: como cada pessoa tende a agir, decidir, se comunicar e reagir à pressão. Os pontos foram transcritos das folhas de resultado; a soma de alguns participantes varia ligeiramente, sem alterar a letra predominante.</p>
+  </section>
+
+</div>
+</div>
+
+
+<!-- ---------- PESQUISA ---------- -->
+<div class="panel" id="pane-pesquisa" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Avaliação de reação · Módulo I</div>
+      <h2>Pesquisa de Reação</h2>
+      <p>Formulário anônimo respondido ao final de cada encontro, nos dois polos. Mede reação — o primeiro nível de avaliação de treinamento: o quanto o participante considerou o encontro útil, bem conduzido e bem apoiado. Não mede ainda mudança de comportamento, que é o que o desafio de aplicabilidade e a mentoria vão verificar.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">23</div><div class="k">Respostas</div><div class="n">13 no Polo GO · 10 no Polo SP</div></div>
+      <div class="num hi"><div class="v">9,5</div><div class="k">Nota média de recomendação</div><div class="n">Escala de 0 a 10</div></div>
+      <div class="num"><div class="v">87</div><div class="k">NPS do treinamento</div><div class="n">20 promotores · 3 neutros · 0 detratores</div></div>
+      <div class="num"><div class="v">0</div><div class="k">Avaliações regulares ou ruins</div><div class="n">Em nenhuma das três perguntas</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>As três perguntas de avaliação</h2>
+      <p>Consolidado das duas turmas. Nenhuma resposta ficou abaixo de "Bom" em nenhum item.</p></div>
+    <div class="card">
+      <div class="sb">
+        <div class="sb-row"><div class="q">O que achou do treinamento?</div>
+          <div class="sb-track">
+            <div class="sb-seg ot" style="width:82.6%">Ótimo · 19</div>
+            <div class="sb-seg bo" style="width:17.4%">Bom · 4</div>
+          </div></div>
+        <div class="sb-row"><div class="q">Desempenho da facilitadora: didática, conhecimento e abordagem</div>
+          <div class="sb-track">
+            <div class="sb-seg ot" style="width:73.9%">Ótimo · 17</div>
+            <div class="sb-seg bo" style="width:26.1%">Bom · 6</div>
+          </div></div>
+        <div class="sb-row"><div class="q">Material apresentado, atividades, exercícios e material de apoio</div>
+          <div class="sb-track">
+            <div class="sb-seg ot" style="width:65.2%">Ótimo · 15</div>
+            <div class="sb-seg bo" style="width:34.8%">Bom · 8</div>
+          </div></div>
+      </div>
+      <div class="legend"><span><i style="background:var(--s)"></i> Ótimo</span><span><i style="background:var(--accent)"></i> Bom</span></div>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <p>O item com mais "Bom" é o material e as atividades (35%). É um resultado coerente com os comentários: os pedidos de melhoria não apontam falha, e sim falta — mais tempo, mais dinâmicas, mais frequência. Lido junto com o fato de que duas atividades previstas foram cortadas por falta de tempo, aponta para uma decisão de desenho: ou se amplia a carga horária, ou se reduz o conteúdo por encontro.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Nota de recomendação, por polo</h2>
+      <p>"De 0 a 10, o quanto você recomendaria este treinamento?"</p></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="eyebrow">Distribuição das 23 notas</div>
+        <div class="bars" style="margin-top:12px">
+          <div class="bar-row ss"><div class="lbl">Nota 10</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">15</div></div>
+          <div class="bar-row ss"><div class="lbl">Nota 9</div><div class="bar-track"><div class="bar-fill" style="width:33.3%"></div></div><div class="val">5</div></div>
+          <div class="bar-row cc"><div class="lbl">Nota 8</div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><div class="val">3</div></div>
+        </div>
+        <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">Nenhuma nota abaixo de 8. As três notas 8 vieram do Polo SP.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Média por polo</div>
+        <div class="bars" style="margin-top:12px">
+          <div class="bar-row neutral"><div class="lbl">Polo GO</div><div class="bar-track"><div class="bar-fill" style="width:98.5%"></div></div><div class="val">9,8</div></div>
+          <div class="bar-row neutral"><div class="lbl">Polo SP</div><div class="bar-track"><div class="bar-fill" style="width:91%"></div></div><div class="val">9,1</div></div>
+        </div>
+        <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">Escala de 0 a 10. NPS de 100 no Polo GO e 70 no Polo SP — nos dois casos sem nenhum detrator.</p>
+        <p style="font-size:.88rem;color:var(--fg-2);margin-top:12px">A diferença acompanha o que se observou em sala: o Polo GO foi a turma mais aberta e participativa, e o Polo SP avaliou de forma mais contida — o que também é coerente com uma turma de perfil predominantemente D e C, menos dada ao entusiasmo declarado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que os líderes escreveram</h2>
+      <p>Comentários selecionados entre as respostas abertas, nas duas unidades. Reproduzidos como foram escritos, com ajustes mínimos de digitação.</p></div>
+    <div class="quotes">
+
+      <div class="quote long">
+        <p>"É um treinamento muito importante, que chegou em um momento muito oportuno diante dos desafios recentes. Ele contribui para potencializar os conhecimentos de cada um, fortalecendo a percepção de como agir em determinadas situações, a tomada de decisão e, principalmente, o compromisso de todos com uma operação cada vez mais segura e responsável."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote long">
+        <p>"Estava precisando muito de um momento de reflexão, veio em boa hora, em um momento que precisamos muito usar métodos de liderança. Estamos em término de safra, momento muito delicado na operação. O treinamento veio para nos tirar da zona de conforto."</p>
+        <div class="tagrow"><span class="pill go">Polo GO</span><span class="score">Nota 9</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Melhor treinamento que já participei, parabéns a todos."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Quero agradecer a empresa pela bela iniciativa, muito gratificante, obrigado de coração!"</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Ótima didática e forma de abordagem. Poderíamos ter mais tempo para aprender cada vez mais. Obrigado e parabéns."</p>
+        <div class="tagrow"><span class="pill go">Polo GO</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Considerando o primeiro encontro: conteúdo bom, com algumas dinâmicas e desafios em grupo, onde cada um dá sua opinião. Achei legal, aguardando o próximo encontro."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 9</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Treinamento de grande aprendizado."</p>
+        <div class="tagrow"><span class="pill go">Polo GO</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Muito construtivo."</p>
+        <div class="tagrow"><span class="pill go">Polo GO</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Pelo que vimos no 1º módulo, que foi bom, cremos que o 2º módulo terá muito potencial para o nosso aprendizado."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 9</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Ótimo. Espero ter mais com frequência."</p>
+        <div class="tagrow"><span class="pill go">Polo GO</span><span class="score">Nota 10</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que pediram para melhorar</h2>
+      <p>Três comentários trouxeram sugestão. Todos pedem a mesma coisa: mais.</p></div>
+    <div class="grid g3">
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <h4 style="font-size:.98rem">Mais tempo</h4>
+        <p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">"Poderíamos ter mais tempo para aprender cada vez mais."</p>
+        <div style="margin-top:10px"><span class="pill go">Polo GO</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <h4 style="font-size:.98rem">Mais dinâmicas</h4>
+        <p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">"Pode ter mais dinâmica entre os líderes."</p>
+        <div style="margin-top:10px"><span class="pill sp">Polo SP</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <h4 style="font-size:.98rem">Mais frequência</h4>
+        <p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">"Espero ter mais com frequência."</p>
+        <div style="margin-top:10px"><span class="pill go">Polo GO</span></div>
+      </div>
+    </div>
+    <div class="note good" style="margin-top:14px">
+      <h4>A leitura honesta deste resultado</h4>
+      <p>Uma avaliação de reação alta confirma aceitação e engajamento — não confirma aprendizado nem mudança de comportamento. O que este resultado garante é que a porta está aberta: a liderança quer continuar, pede mais tempo e mais prática, e não houve um único detrator nas duas unidades.</p>
+      <p>A prova real vem no Módulo II, na rodada de relatos das duas missões. É ali que se vê quantos líderes de fato perguntaram à equipe o que atrapalha e quantos levaram uma proposta com dado ao coordenador.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ---------- MATERIAIS ---------- -->
+<div class="panel" id="pane-materiais" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Módulo I</div>
+      <h2>Material aplicado</h2>
+      <p>Os decks completos usados nos encontros, em PDF. Incluem as notas de condução, os gabaritos dos jogos e os cases.</p>
+    </div>
+    <div class="files">
+      <a class="file" href="materiais/sou-lider-lots-modulo-1-a6f5f9b4.pdf" target="_blank" rel="noopener">
+        <div class="ext">PDF</div>
+        <div><h4>Sou Líder LOTS — Módulo I</h4>
+        <p>Material do treinamento presencial com os líderes operacionais. 45 slides.</p>
+        <div class="open">Abrir ↗</div></div>
+      </a>
+      <a class="file" href="materiais/mentoria-coordenadores-modulo-1-c19cfda0.pdf" target="_blank" rel="noopener">
+        <div class="ext">PDF</div>
+        <div><h4>Mentoria dos Coordenadores — Módulo I</h4>
+        <p>Material da sessão online com os 8 coordenadores. 24 slides.</p>
+        <div class="open">Abrir ↗</div></div>
+      </a>
+      <a class="file" href="materiais/caderno-do-lider-modulo-1-aa5df2b9.pdf" target="_blank" rel="noopener">
+        <div class="ext">PDF</div>
+        <div><h4>Caderno do Líder — Módulo I</h4>
+        <p>Material de trabalho que cada líder levou: autoavaliação dos 12 papéis, Espelho Retrovisor, testes rápidos de DISC e de autorresponsabilidade, os três círculos, o Compromisso de Rota e o registro das duas missões. 7 páginas.</p>
+        <div class="open">Abrir ↗</div></div>
+      </a>
+    </div>
+    <div class="note" style="margin-top:16px">
+      <p>O Caderno do Líder é o elo entre a sala e o turno. As atividades feitas no encontro ficam registradas nele, e é nele que o líder anota o cumprimento das duas missões até o Módulo II — inclusive o checklist que ele deve trazer no próximo encontro. Vale a coordenação pedir para ver.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Relatórios individuais dos coordenadores</h2>
+      <p>Cada relatório traz a introdução ao modelo DISC, a leitura do perfil do próprio coordenador, as dicas de relacionamento com os quatro perfis e, na última parte, a equipe dele líder a líder — com a análise da combinação entre o perfil do coordenador e o de cada liderado.</p>
+    </div>
+    <div class="files" id="relatorios">
+      <div class="file off"><div class="ext">PDF</div><div><h4>Clovis Amaral Neto</h4><p>Perfil DI · 8 líderes · Polo SP</p><div class="open">Em publicação</div></div></div>
+      <div class="file off"><div class="ext">PDF</div><div><h4>Edmo José Garcia</h4><p>Perfil SC · 7 líderes · Polo SP</p><div class="open">Em publicação</div></div></div>
+      <div class="file off"><div class="ext">PDF</div><div><h4>Dione Gomes Costa</h4><p>Perfil ID · 2 líderes · Polo SP</p><div class="open">Em publicação</div></div></div>
+      <div class="file off"><div class="ext">PDF</div><div><h4>Lennon Kevin Marreira de Souza</h4><p>Perfil DC · 1 líder · Polo SP</p><div class="open">Em publicação</div></div></div>
+      <div class="file off"><div class="ext">PDF</div><div><h4>Juliano Nunes Rezende</h4><p>Perfil SD · 5 líderes · Polo GO</p><div class="open">Em publicação</div></div></div>
+      <div class="file off"><div class="ext">PDF</div><div><h4>Murillo Pires Nunes</h4><p>Perfil CD · 5 líderes · SP e GO</p><div class="open">Em publicação</div></div></div>
+      <div class="file off"><div class="ext">PDF</div><div><h4>Peterval Marcelo dos Santos</h4><p>Perfil CD · 4 líderes · SP e GO</p><div class="open">Em publicação</div></div></div>
+      <div class="file off"><div class="ext">PDF</div><div><h4>Keythy Keller A. L. de Alencar</h4><p>1 líder · Polo SP</p><div class="open">Aguardando resultado do teste</div></div></div>
+    </div>
+    <div class="note" style="margin-top:16px">
+      <p>Os relatórios individuais são confidenciais e pertencem a cada coordenador. Esta página reúne o material para consulta do RH e da gerência no acompanhamento do programa; o resultado individual de cada líder não é apresentado em nenhum momento.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+</div><!-- /mod-m1 -->
+
+<!-- ================= MÓDULOS 2-6 ================= -->
+<div id="mod-m2" hidden><div class="panel"><div class="wrap"><div class="soon">
+  <div class="m">M2</div><h2>Comunicação Assertiva</h2>
+  <p>Feedback e conversas difíceis. Esta página será preenchida logo após os encontros, com a estrutura do módulo, as atividades e seus objetivos, os números das turmas e o relato das missões do Módulo I.</p>
+  <span class="pill when">Novembro/2026</span>
+</div></div></div></div>
+
+<div id="mod-m3" hidden><div class="panel"><div class="wrap"><div class="soon">
+  <div class="m">M3</div><h2>Inteligência Emocional</h2>
+  <p>Segurança psicológica e gestão de conflitos. Conteúdo publicado após a realização do módulo nas duas unidades.</p>
+  <span class="pill when">Dezembro/2026</span>
+</div></div></div></div>
+
+<div id="mod-m4" hidden><div class="panel"><div class="wrap"><div class="soon">
+  <div class="m">M4</div><h2>Gestão de Pessoas</h2>
+  <p>Desempenho, delegação, tomada de decisão, desenvolvimento de equipe e engajamento.</p>
+  <span class="pill when">Data a confirmar</span>
+</div></div></div></div>
+
+<div id="mod-m5" hidden><div class="panel"><div class="wrap"><div class="soon">
+  <div class="m">M5</div><h2>Gestão de Performance</h2>
+  <p>Resolução de problemas, indicadores, metas e resultado.</p>
+  <span class="pill when">Data a confirmar</span>
+</div></div></div></div>
+
+<div id="mod-m6" hidden><div class="panel"><div class="wrap"><div class="soon">
+  <div class="m">M6</div><h2>Líder do Futuro</h2>
+  <p>Leitura de cenário, nova geração, retenção e PDI. Encerramento do programa, com o Ranking da Rota e o reconhecimento de quem mais aplicou.</p>
+  <span class="pill when">Data a confirmar</span>
+</div></div></div></div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+      <img src="img/cassia.png" alt="Cássia Garcia Consultoria">
+      <span style="width:1px;height:26px;background:rgba(255,255,255,.2)"></span>
+      <img src="img/lots.png" alt="LOTS Group" style="height:22px">
+    </div>
+    <div class="c">
+      <b>Cássia Garcia Consultoria</b><br>
+      (18) 99680-0191 &middot; cassiagarciaconsultoria@gmail.com &middot; @cassiagarciaconsultoria<br>
+      Programa Sou Líder LOTS &middot; Atualizado a cada módulo
+    </div>
+  </div>
+</footer>
+</div><!-- /site -->
+
+<script>
+(function(){
+  var stops = Array.prototype.slice.call(document.querySelectorAll('.stop'));
+  var tabs  = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var tabbar = document.getElementById('tabbar');
+
+  function showModule(id){
+    stops.forEach(function(s){
+      var on = s.dataset.mod === id;
+      s.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    ['m1','m2','m3','m4','m5','m6'].forEach(function(m){
+      var el = document.getElementById('mod-' + m);
+      if (el) el.hidden = (m !== id);
+    });
+    tabbar.hidden = (id !== 'm1');
+  }
+
+  function showTab(id){
+    tabs.forEach(function(t){
+      t.setAttribute('aria-selected', t.dataset.tab === id ? 'true' : 'false');
+    });
+    ['visao','prudente','mineiros','mentoria','disc','pesquisa','materiais'].forEach(function(p){
+      var el = document.getElementById('pane-' + p);
+      if (el) el.hidden = (p !== id);
+    });
+  }
+
+  stops.forEach(function(s){
+    s.addEventListener('click', function(){
+      showModule(s.dataset.mod);
+      if (s.dataset.mod === 'm1') showTab('visao');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      showTab(t.dataset.tab);
+      try { history.replaceState(null, '', '#' + t.dataset.tab); } catch(e){}
+      var y = tabbar.getBoundingClientRect().top + window.scrollY - 4;
+      if (window.scrollY > y) window.scrollTo({top:y, behavior:'smooth'});
+    });
+  });
+
+  var valid = ['visao','prudente','mineiros','mentoria','disc','pesquisa','materiais'];
+  var h = (location.hash || '').replace('#','');
+  if (valid.indexOf(h) !== -1) { showModule('m1'); showTab(h); }
+})();
+</script>
+
+<script>
+(function(){
+  var HASH = "96948c6c3a2a674f8db4f5a0702cc2084fe1f3ca389cb9d628519f56f34c59d6";
+  var KEY = "sll-acesso";
+  var gate = document.getElementById('gate');
+  var site = document.getElementById('site');
+  var form = document.getElementById('gate-form');
+  var input = document.getElementById('gate-code');
+  var msg = document.getElementById('gate-msg');
+
+  function open_(){
+    gate.hidden = true;
+    gate.style.display = 'none';
+    site.hidden = false;
+  }
+
+  async function sha256(txt){
+    var buf = new TextEncoder().encode(txt);
+    var d = await crypto.subtle.digest('SHA-256', buf);
+    return Array.prototype.map.call(new Uint8Array(d), function(b){
+      return b.toString(16).padStart(2,'0');
+    }).join('');
+  }
+
+  try { if (localStorage.getItem(KEY) === HASH) open_(); } catch(e){}
+
+  form.addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    msg.textContent = '';
+    var v = (input.value || '').trim().toLowerCase();
+    if (!v) return;
+    if (!(window.crypto && crypto.subtle)) {
+      msg.textContent = 'Este navegador não consegue validar o código. Abra o link em outro navegador.';
+      return;
+    }
+    var h;
+    try { h = await sha256(v); } catch(e){
+      msg.textContent = 'Não foi possível validar o código agora. Tente novamente.';
+      return;
+    }
+    if (h === HASH) {
+      try { localStorage.setItem(KEY, HASH); } catch(e){}
+      open_();
+    } else {
+      msg.textContent = 'Código incorreto. Confira o código enviado junto com o link.';
+      input.select();
+    }
+  });
+
+  if (!gate.hidden) { try { input.focus(); } catch(e){} }
+})();
+</script>
+</body>
+</html>
