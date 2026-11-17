@@ -47,6 +47,7 @@ img{max-width:100%}
   --d:#C0453A; --i:#C98711; --s:#3F8F6E; --c:#4A6FA5;
   --d-wash:#F8EAE8; --i-wash:#FAF1DF; --s-wash:#E7F2ED; --c-wash:#EAEFF7;
   --warn:#B3541E; --warn-wash:#FBEFE6;
+  --canal-v:#2F7CB8; --canal-a:#8A5CB4; --canal-c:#C07A1E;
   --shadow:0 1px 2px rgba(10,35,66,.06), 0 8px 24px rgba(10,35,66,.07);
   --display:'Archivo', 'Helvetica Neue', Arial, sans-serif;
   --body:'IBM Plex Sans', -apple-system, 'Segoe UI', Arial, sans-serif;
@@ -64,6 +65,7 @@ img{max-width:100%}
     --d:#E8756A; --i:#E5AE45; --s:#61BE97; --c:#8AA9DC;
     --d-wash:#30191A; --i-wash:#302512; --s-wash:#132B22; --c-wash:#17233A;
     --warn:#E59560; --warn-wash:#31200F;
+    --canal-v:#63AEE0; --canal-a:#B48CDC; --canal-c:#DDA24A;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
     color-scheme: dark;
   }
@@ -78,6 +80,7 @@ img{max-width:100%}
   --d:#E8756A; --i:#E5AE45; --s:#61BE97; --c:#8AA9DC;
   --d-wash:#30191A; --i-wash:#302512; --s-wash:#132B22; --c-wash:#17233A;
   --warn:#E59560; --warn-wash:#31200F;
+  --canal-v:#63AEE0; --canal-a:#B48CDC; --canal-c:#DDA24A;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
   color-scheme: dark;
 }
@@ -344,6 +347,29 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 #gate .foot{color:#7F9ABA;font-size:.8rem;margin-top:30px;padding-top:18px;
   border-top:1px solid rgba(255,255,255,.13);line-height:1.6}
 
+
+/* canais de comunicação */
+.dc.vis{border-top-color:var(--canal-v)} .dc.aud{border-top-color:var(--canal-a)}
+.dc.cin{border-top-color:var(--canal-c)} .dc.mix{border-top-color:var(--fg-3)}
+.dc.vis .ltr{color:var(--canal-v)} .dc.aud .ltr{color:var(--canal-a)}
+.dc.cin .ltr{color:var(--canal-c)} .dc.mix .ltr{color:var(--fg-3)}
+.dc .ltr.sm{font-size:1.15rem;letter-spacing:.01em}
+.bar-row.vv .bar-fill{background:var(--canal-v)} .bar-row.vv .val{color:var(--canal-v)}
+.bar-row.aa .bar-fill{background:var(--canal-a)} .bar-row.aa .val{color:var(--canal-a)}
+.bar-row.kk .bar-fill{background:var(--canal-c)} .bar-row.kk .val{color:var(--canal-c)}
+.bar-row.mm .bar-fill{background:var(--fg-3)} .bar-row.mm .val{color:var(--fg-3)}
+.pair-line.co .pair-fill{background:var(--plum)} .pair-line.co .v{color:var(--plum)}
+.pill.co{color:var(--plum);border-color:var(--plum);background:var(--plum-wash)}
+.sb-seg.ok{background:var(--s)} .sb-seg.no{background:var(--warn)}
+.scale{display:grid;gap:9px}
+.scale-row{display:grid;grid-template-columns:1fr 112px 42px;gap:12px;align-items:center;font-size:.88rem}
+.scale-row .q{color:var(--fg-2);min-width:0}
+.scale-track{background:var(--paper);border:1px solid var(--line);border-radius:4px;height:16px;position:relative;overflow:hidden}
+.scale-fill{position:absolute;inset:0 auto 0 0;background:var(--accent)}
+.scale-row .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-family:var(--display);color:var(--accent)}
+.scale-row.low .scale-fill{background:var(--warn)} .scale-row.low .v{color:var(--warn)}
+@media (max-width:460px){.scale-row{grid-template-columns:1fr 70px 38px;gap:8px;font-size:.82rem}}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -382,7 +408,7 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
     <div class="mast-id">
       <div class="kicker">Portal do Programa</div>
       <h1>Sou Líder LOTS</h1>
-      <p class="sub">Seis paradas em seis meses. A cada módulo, esta página reúne a estrutura do encontro, as atividades e seus objetivos, os números da turma, o resultado dos testes e todo o material aplicado — para o RH e a gerência acompanharem o que está acontecendo na liderança da operação.</p>
+      <p class="sub">Seis paradas em seis meses. A cada módulo, esta página reúne a estrutura do encontro, as atividades e seus objetivos, os números da turma, o resultado dos testes, as percepções da facilitadora e todo o material aplicado — para o RH e a gerência acompanharem o que está acontecendo na liderança da operação.</p>
       <dl class="mast-facts">
         <div><dt>Turmas</dt><dd>2 presenciais + 1 mentoria online</dd></div>
         <div><dt>Duração</dt><dd>6 módulos · 6 meses</dd></div>
@@ -396,36 +422,38 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 <nav class="rail-bar" aria-label="Módulos do programa">
   <div class="wrap">
     <div class="rail" role="tablist">
-      <button class="stop" role="tab" data-mod="m1" aria-selected="true"><b>M1</b> Ponto de Partida <small>Out/26</small></button>
-      <button class="stop" role="tab" data-mod="m2" aria-selected="false"><b>M2</b> Comunicação Assertiva <small>Nov/26</small></button>
+      <button class="stop" role="tab" data-mod="m1" aria-selected="false"><b>M1</b> Ponto de Partida <small>Out/26</small></button>
+      <button class="stop" role="tab" data-mod="m2" aria-selected="true"><b>M2</b> Comunicação Assertiva <small>Nov/26</small></button>
       <button class="stop" role="tab" data-mod="m3" aria-selected="false"><b>M3</b> Inteligência Emocional <small>Dez/26</small></button>
-      <button class="stop" role="tab" data-mod="m4" aria-selected="false"><b>M4</b> Gestão de Pessoas <small>a confirmar</small></button>
-      <button class="stop" role="tab" data-mod="m5" aria-selected="false"><b>M5</b> Gestão de Performance <small>a confirmar</small></button>
-      <button class="stop" role="tab" data-mod="m6" aria-selected="false"><b>M6</b> Líder do Futuro <small>a confirmar</small></button>
+      <button class="stop" role="tab" data-mod="m4" aria-selected="false"><b>M4</b> Gestão de Pessoas <small>Dez/26</small></button>
+      <button class="stop" role="tab" data-mod="m5" aria-selected="false"><b>M5</b> Gestão de Performance <small>Fev/27</small></button>
+      <button class="stop" role="tab" data-mod="m6" aria-selected="false"><b>M6</b> Líder do Futuro <small>Mar/27</small></button>
     </div>
   </div>
 </nav>
 
-<div class="tabbar" id="tabbar">
+
+<main>
+<!-- ================= MÓDULO 1 ================= -->
+<div id="mod-m1" hidden>
+
+<div class="tabbar">
   <div class="wrap">
-    <div class="tabs" role="tablist" aria-label="Seções do módulo">
-      <button class="tab" role="tab" data-tab="visao" aria-selected="true">Visão geral</button>
-      <button class="tab" role="tab" data-tab="prudente" aria-selected="false">Polo SP</button>
-      <button class="tab" role="tab" data-tab="mineiros" aria-selected="false">Polo GO</button>
-      <button class="tab" role="tab" data-tab="mentoria" aria-selected="false">Mentoria dos Coordenadores</button>
-      <button class="tab" role="tab" data-tab="disc" aria-selected="false">Perfil DISC LOTS</button>
-      <button class="tab" role="tab" data-tab="pesquisa" aria-selected="false">Pesquisa de Reação</button>
-      <button class="tab" role="tab" data-tab="materiais" aria-selected="false">Materiais e relatórios</button>
+    <div class="tabs" role="tablist" aria-label="Seções do Módulo I">
+      <button class="tab" role="tab" data-mod="m1" data-tab="visao" aria-selected="true">Visão geral</button>
+      <button class="tab" role="tab" data-mod="m1" data-tab="polosp" aria-selected="false">Polo SP</button>
+      <button class="tab" role="tab" data-mod="m1" data-tab="pologo" aria-selected="false">Polo GO</button>
+      <button class="tab" role="tab" data-mod="m1" data-tab="mentoria" aria-selected="false">Mentoria dos Coordenadores</button>
+      <button class="tab" role="tab" data-mod="m1" data-tab="disc" aria-selected="false">Perfil DISC LOTS</button>
+      <button class="tab" role="tab" data-mod="m1" data-tab="pesquisa" aria-selected="false">Pesquisa de Reação</button>
+      <button class="tab" role="tab" data-mod="m1" data-tab="materiais" aria-selected="false">Materiais e relatórios</button>
     </div>
   </div>
 </div>
 
-<main>
-<!-- ================= MÓDULO 1 ================= -->
-<div id="mod-m1">
 
 <!-- ---------- VISÃO GERAL ---------- -->
-<div class="panel" id="pane-visao">
+<div class="panel" id="pane-m1-visao">
 <div class="wrap">
 
   <section>
@@ -591,7 +619,7 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 </div>
 
 <!-- ---------- PRUDENTE ---------- -->
-<div class="panel" id="pane-prudente" hidden>
+<div class="panel" id="pane-m1-polosp" hidden>
 <div class="wrap">
 
   <section>
@@ -685,7 +713,7 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 </div>
 
 <!-- ---------- MINEIROS ---------- -->
-<div class="panel" id="pane-mineiros" hidden>
+<div class="panel" id="pane-m1-pologo" hidden>
 <div class="wrap">
 
   <section>
@@ -790,7 +818,7 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 </div>
 
 <!-- ---------- MENTORIA ---------- -->
-<div class="panel" id="pane-mentoria" hidden>
+<div class="panel" id="pane-m1-mentoria" hidden>
 <div class="wrap">
 
   <section>
@@ -902,7 +930,7 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 </div>
 
 <!-- ---------- DISC ---------- -->
-<div class="panel" id="pane-disc" hidden>
+<div class="panel" id="pane-m1-disc" hidden>
 <div class="wrap">
 
   <section>
@@ -1140,7 +1168,7 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 
 
 <!-- ---------- PESQUISA ---------- -->
-<div class="panel" id="pane-pesquisa" hidden>
+<div class="panel" id="pane-m1-pesquisa" hidden>
 <div class="wrap">
 
   <section>
@@ -1299,7 +1327,7 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 </div>
 
 <!-- ---------- MATERIAIS ---------- -->
-<div class="panel" id="pane-materiais" hidden>
+<div class="panel" id="pane-m1-materiais" hidden>
 <div class="wrap">
 
   <section>
@@ -1359,34 +1387,990 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 </div><!-- /mod-m1 -->
 
 <!-- ================= MÓDULOS 2-6 ================= -->
-<div id="mod-m2" hidden><div class="panel"><div class="wrap"><div class="soon">
-  <div class="m">M2</div><h2>Comunicação Assertiva</h2>
-  <p>Feedback e conversas difíceis. Esta página será preenchida logo após os encontros, com a estrutura do módulo, as atividades e seus objetivos, os números das turmas e o relato das missões do Módulo I.</p>
-  <span class="pill when">Novembro/2026</span>
-</div></div></div></div>
+<div id="mod-m2">
+
+<div class="tabbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Seções do Módulo II">
+      <button class="tab" role="tab" data-mod="m2" data-tab="visao" aria-selected="true">Visão geral</button>
+      <button class="tab" role="tab" data-mod="m2" data-tab="polosp" aria-selected="false">Polo SP</button>
+      <button class="tab" role="tab" data-mod="m2" data-tab="pologo" aria-selected="false">Polo GO</button>
+      <button class="tab" role="tab" data-mod="m2" data-tab="mentoria" aria-selected="false">Mentoria dos Coordenadores</button>
+      <button class="tab" role="tab" data-mod="m2" data-tab="canais" aria-selected="false">Canais de Comunicação</button>
+      <button class="tab" role="tab" data-mod="m2" data-tab="pesquisa" aria-selected="false">Pesquisa de Opinião</button>
+      <button class="tab" role="tab" data-mod="m2" data-tab="materiais" aria-selected="false">Materiais</button>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="pane-m2-visao">
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Módulo II · Novembro/2026</div>
+      <h2>Números do módulo</h2>
+      <p>O Módulo II foi aplicado nos dois polos com a mesma estrutura, seguido da mentoria online com os coordenadores. O fio condutor do dia: <i>falei não é o mesmo que entenderam</i>.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">33</div><div class="k">Líderes presentes</div><div class="n">22 no Polo SP · 11 no Polo GO</div></div>
+      <div class="num"><div class="v">94%</div><div class="k">Taxa de presença</div><div class="n">2 faltas, as duas no Polo SP</div></div>
+      <div class="num"><div class="v">6</div><div class="k">Coordenadores na mentoria</div><div class="n">De 9 convocados · 3 faltas</div></div>
+      <div class="num"><div class="v">39</div><div class="k">Testes de canais aplicados</div><div class="n">33 líderes + 6 coordenadores</div></div>
+      <div class="num"><div class="v">14</div><div class="k">Respostas na pesquisa de opinião</div><div class="n">Anônima, sobre comunicação e feedback</div></div>
+      <div class="num"><div class="v">15</div><div class="k">Atividades práticas</div><div class="n">Jogos, cases, oficinas e testes</div></div>
+      <div class="num"><div class="v">12h30</div><div class="k">Carga horária entregue</div><div class="n">5h × 2 turmas + 2h30 de mentoria</div></div>
+      <div class="num hi"><div class="v">99</div><div class="k">Missões em campo</div><div class="n">3 desafios × 33 líderes, até o M3</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">O que o módulo entrega</div>
+      <h2>Objetivos de aprendizagem</h2>
+      <p>O Módulo I trabalhou o olhar para dentro. O Módulo II vira esse olhar para fora: como a mensagem do líder chega — ou não — em quem precisa executá-la.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Estruturar</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">A orientação pelo checklist — o quê, por quê, como, quando e quem — e fechar o circuito pedindo que o outro repita.</p></div>
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Adaptar</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">A forma de falar ao canal de quem ouve: visual, auditivo ou cinestésico — e ao perfil DISC do liderado.</p></div>
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Aplicar</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">A técnica SCI+A para dar feedback corretivo e de reconhecimento, com fato observável e acordo fechado.</p></div>
+      <div class="card"><h4 style="color:var(--accent);font-size:1.05rem">Enfrentar</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">A conversa difícil que vinha sendo adiada, conduzindo com firmeza no assunto e gentileza com a pessoa.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Estrutura do encontro</div>
+      <h2>Como foram as 5 horas</h2>
+      <p>Mesma estrutura nos dois polos, em formato de ilhas. O módulo tem quatro blocos de conteúdo e termina com as missões até o Módulo III.</p>
+    </div>
+    <div class="card">
+      <div class="tl">
+        <div class="tl-item"><div class="tl-t">00:00<br>00:40</div><div class="tl-b"><h4>Abertura e retrovisor</h4><p>Check-in, combinados e o relato das duas missões do Módulo I, com pontuação no Ranking.</p></div></div>
+        <div class="tl-item"><div class="tl-t">00:40<br>01:55</div><div class="tl-b"><h4>Comunicação</h4><p>O caminho da mensagem e os três ruídos, teste de canais, estilos de comunicação, circuito fechado, case da rota e escuta ativa.</p></div></div>
+        <div class="tl-item"><div class="tl-t">01:55<br>02:10</div><div class="tl-b"><h4>Intervalo</h4><p>Coffee break.</p></div></div>
+        <div class="tl-item"><div class="tl-t">02:10<br>03:20</div><div class="tl-b"><h4>Feedback</h4><p>O que é e o que não é feedback, os 7 erros mais comuns, a técnica SCI+A, a oficina Funilaria do Feedback e as reações difíceis.</p></div></div>
+        <div class="tl-item"><div class="tl-t">03:20<br>04:35</div><div class="tl-b"><h4>Conversas difíceis e oratória</h4><p>O preço de adiar, DISC nas conversas difíceis, Simulador de Rota, jogo DISC x Comunicação e autoavaliação de oratória.</p></div></div>
+        <div class="tl-item"><div class="tl-t">04:35<br>05:00</div><div class="tl-b"><h4>Fechamento</h4><p>As três missões até o Módulo III e a pesquisa de reação.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">O coração do módulo</div>
+      <h2>As 15 atividades e por que cada uma existe</h2>
+      <p>Como no Módulo I, nenhuma atividade está no material por ser divertida. Abaixo, o objetivo técnico de cada uma — é esta a leitura que permite ao RH e à gerência cobrar o resultado certo na operação.</p>
+    </div>
+    <div class="act">
+
+      <div class="act-row"><div class="act-n">01</div><div class="act-b">
+        <h4>Retrovisor das missões do Módulo I <span class="pill">Abertura</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> dar consequência ao desafio do módulo anterior. Sem cobrança do relato, a missão vira opcional e o programa perde o elo com a operação. Cada líder conta em 1 minuto o que ouviu da equipe e o que fez com isso.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">02</div><div class="act-b">
+        <h4>Papel e caneta: a instrução que cada um entendeu de um jeito <span class="pill jogo">Dinâmica</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> provar na pele, logo na abertura, que a mesma instrução gera desenhos diferentes. É a prova física da frase que abre o módulo — o maior problema da comunicação é a ilusão de que ela aconteceu — e funciona melhor que qualquer explicação teórica.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">03</div><div class="act-b">
+        <h4>Teste online: Qual é o meu canal? <span class="pill teste">Teste</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> identificar se cada pessoa aprende e se conecta melhor vendo, ouvindo ou fazendo. Aplicado pelo celular, sem login e sem identificação. Gera o dado consolidado que está na aba Canais de Comunicação — e que mostrou o descompasso entre a coordenação e a liderança.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">04</div><div class="act-b">
+        <h4>Qual é o estilo? <span class="pill jogo">Jogo em equipes</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> treinar o reconhecimento dos quatro estilos de comunicação em frases reais da operação. Cada equipe levanta a placa P, A, PA ou AS. Duas frases são deliberadamente ambíguas — a que parece paciência e acumula, e a que parece elogio e é ironia em público.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">05</div><div class="act-b">
+        <h4>Um problema, 4 vozes! <span class="pill">Duplas</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> sair do reconhecimento para a produção. Não basta identificar que a frase é agressiva: o líder reescreve em versão assertiva, com fato, impacto e pedido claro, na linguagem dele. É o primeiro exercício de escrita do módulo.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">06</div><div class="act-b">
+        <h4>Circuito fechado <span class="pill ind">Demonstração + duplas</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> instalar o hábito que resolve a maior parte dos ruídos — trocar "Entendeu?", cuja resposta é sempre sim, por "Me conta como você vai fazer?". A técnica vem da aviação e de ambientes de risco, e a dupla pratica com uma orientação real da área.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">07</div><div class="act-b">
+        <h4>Case em grupo: A rota nova que ninguém conhecia <span class="pill case">Case</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> aplicar o checklist, a escolha do canal e o circuito fechado a uma falha de comunicação com consequência medida — frente parada 1h30 e socorro de 30 minutos que virou 2h. Os grupos reescrevem a fala do coordenador palavra por palavra.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">08</div><div class="act-b">
+        <h4>Que ouvinte eu sou? <span class="pill teste">Teste individual</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> confrontar o líder com o próprio padrão de escuta nos quatro níveis — fingida, seletiva, para responder e ativa. O resultado é só da pessoa e não é compartilhado; o que importa é a pergunta de fundo: em que nível eu fico quando estou com pressa ou cansado?</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">09</div><div class="act-b">
+        <h4>Fato ou opinião? <span class="pill">Todos juntos</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> preparar o terreno do feedback. Antes de aprender a técnica, o líder precisa distinguir o que uma câmera filmaria do que é julgamento. É a competência que sustenta o "C" do SCI+A e a que mais falta na prática.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">10</div><div class="act-b">
+        <h4>Funilaria do Feedback <span class="pill jogo">Oficina · 6 grupos</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> esta é a atividade central do bloco de feedback. Cada grupo recebe uma situação real com o perfil DISC do liderado e um feedback dado do jeito errado. O grupo diagnostica os erros, reescreve com SCI+A, representa a conversa e passa pela vistoria da turma. Os seis casos cobrem os erros mais comuns: bronca pelo rádio, sanduíche vazio, indireta no DDS, comparação, piada em público e áudio vago no WhatsApp.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">11</div><div class="act-b">
+        <h4>Começar, parar, continuar <span class="pill ind">Individual</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> inverter o fluxo. O líder que pede feedback cria segurança psicológica e dá o exemplo de como recebê-lo — escutando até o fim, sem se justificar na hora. Vira a Missão 3 até o Módulo III, e o coordenador é quem recebe o pedido.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">12</div><div class="act-b">
+        <h4>A conversa que eu venho adiando <span class="pill ind">Reflexão individual</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> tirar do abstrato. Cada líder escreve no caderno com quem é a conversa, sobre o quê, há quanto tempo está parada e qual o perfil DISC da pessoa. Ninguém compartilha. Essa conversa específica é o que ele vai preparar e conduzir até o próximo módulo.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">13</div><div class="act-b">
+        <h4>Simulador de Rota <span class="pill case">6 cenários</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> ensaiar em sala a conversa que assusta, para que a primeira vez não seja no turno. Os seis cenários são os que todo líder já adiou: o veterano no celular, o amigo atrasado, o liderado com problema em casa, a resposta com deboche, a promoção que não veio e a escala impopular.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">14</div><div class="act-b">
+        <h4>DISC x Comunicação: monte o quadro <span class="pill jogo">Jogo · 6 grupos</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> amarrar o Módulo I ao Módulo II. Com 24 cartões, cada grupo monta como cada perfil fala, escuta e precisa ser abordado. A coluna decisiva é a do perfil mais difícil para cada um — D tem mais atrito com S, I com C, S com D e C com I.</p>
+      </div></div>
+
+      <div class="act-row"><div class="act-n">15</div><div class="act-b">
+        <h4>Como anda minha oratória? <span class="pill ind">Autoavaliação + 3 colegas</span></h4>
+        <p class="act-obj"><b>Objetivo:</b> dar ao líder um retrato da própria fala em oito aspectos — dicção, volume, pronúncia, objetividade, velocidade, tom e postura, cacoetes e escuta — avaliado por ele e por três colegas. O líder operacional fala para o grupo todos os dias no DDS, no rádio e na troca de turno: é um comunicador profissional sem nunca ter sido tratado como um.</p>
+      </div></div>
+
+    </div>
+    <div class="note" style="margin-top:14px">
+      <p>As atividades estão descritas conforme o material aplicado. A oficina Funilaria do Feedback e o Simulador de Rota são as duas de maior carga prática e as que mais dependem de tempo disponível em sala.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Entre o M2 e o M3</div>
+      <h2>Desafio de aplicabilidade</h2>
+      <p>Três missões, registradas em formulário até 24/11 e relatadas no Módulo III. Pela primeira vez no programa, o coordenador entra como parte da missão.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <div class="eyebrow">Missão 1</div>
+        <h4 style="font-size:1.08rem;margin-top:6px">Feedback corretivo com SCI+A</h4>
+        <p style="font-size:.92rem;color:var(--fg-2);margin-top:8px">Dar um feedback que corrige um comportamento, usando situação, comportamento, impacto e acordo.</p>
+        <p style="font-size:.87rem;color:var(--fg-3);margin-top:10px"><b style="color:var(--fg-2)">Por quê:</b> é a técnica única do módulo. Só vira hábito se for usada antes do próximo encontro.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Missão 2</div>
+        <h4 style="font-size:1.08rem;margin-top:6px">Feedback de reconhecimento</h4>
+        <p style="font-size:.92rem;color:var(--fg-2);margin-top:8px">Reconhecer um comportamento concreto, com o mesmo modelo — e pedir que a pessoa repita o que deu certo.</p>
+        <p style="font-size:.87rem;color:var(--fg-3);margin-top:10px"><b style="color:var(--fg-2)">Por quê:</b> ataca o gap de Influência identificado no Módulo I. Reconhecer não sai naturalmente desta liderança; precisa de rotina.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Missão 3</div>
+        <h4 style="font-size:1.08rem;margin-top:6px">Pedir feedback ao coordenador</h4>
+        <p style="font-size:.92rem;color:var(--fg-2);margin-top:8px">Perguntar ao próprio líder: o que eu devo começar, parar e continuar a fazer?</p>
+        <p style="font-size:.87rem;color:var(--fg-3);margin-top:10px"><b style="color:var(--fg-2)">Por quê:</b> inverte a direção do feedback e testa, na prática, se a coordenação está preparada para receber.</p>
+      </div>
+    </div>
+    <div class="note plum" style="margin-top:14px">
+      <h4>O que a coordenação precisa fazer</h4>
+      <p>Na Missão 3, o coordenador é quem recebe o pedido de feedback. A orientação dada na mentoria foi: escutar até o fim, agradecer, não se justificar na hora — e depois mostrar o que mudou. Um pedido de feedback recebido com defensividade ensina ao líder que não vale a pena perguntar de novo.</p>
+      <p>Nas missões 1 e 2, a pergunta de acompanhamento não é "você fez?". É "me conta o que você disse e o que ele respondeu". Se o líder responde "tudo certo", o exemplo concreto é o que revela se a técnica foi usada.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<div class="panel" id="pane-m2-polosp" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Turma presencial · Módulo II</div>
+      <h2>Polo SP</h2>
+      <p>A maior turma do programa e a de perfil de canal mais variado — o que torna a comunicação do líder aqui necessariamente multicanal.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">22</div><div class="k">Líderes presentes</div><div class="n">2 faltas na turma</div></div>
+      <div class="num"><div class="v">22</div><div class="k">Testes de canais aplicados</div><div class="n">100% dos presentes</div></div>
+      <div class="num"><div class="v">12</div><div class="k">Respostas na pesquisa de opinião</div><div class="n">De 14 respostas no total</div></div>
+      <div class="num"><div class="v">5h</div><div class="k">Carga horária</div><div class="n">Encontro presencial</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Canal de comunicação da turma</h2>
+      <p>Quase 6 em cada 10 líderes do Polo SP <i>não</i> são auditivos. É a turma que mais exige variação de canal na mesma orientação.</p></div>
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:12px">Canal predominante · 22 líderes</div>
+      <div class="bars">
+        <div class="bar-row aa"><div class="lbl">Auditivo</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">41%</div></div>
+        <div class="bar-row kk"><div class="lbl">Cinestésico</div><div class="bar-track"><div class="bar-fill" style="width:66.7%"></div></div><div class="val">27%</div></div>
+        <div class="bar-row mm"><div class="lbl">Misto</div><div class="bar-track"><div class="bar-fill" style="width:44.4%"></div></div><div class="val">18%</div></div>
+        <div class="bar-row vv"><div class="lbl">Visual</div><div class="bar-track"><div class="bar-fill" style="width:33.3%"></div></div><div class="val">14%</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">9 auditivos · 6 cinestésicos · 4 mistos · 3 visuais. "Misto" é quem empatou entre dois ou três canais.</p>
+      <div class="eyebrow" style="margin:22px 0 12px">Média de pontos por canal</div>
+      <div class="bars">
+        <div class="bar-row aa"><div class="lbl">Auditivo</div><div class="bar-track"><div class="bar-fill" style="width:87.3%"></div></div><div class="val">4,8</div></div>
+        <div class="bar-row kk"><div class="lbl">Cinestésico</div><div class="bar-track"><div class="bar-fill" style="width:67.3%"></div></div><div class="val">3,7</div></div>
+        <div class="bar-row vv"><div class="lbl">Visual</div><div class="bar-track"><div class="bar-fill" style="width:63.6%"></div></div><div class="val">3,5</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">Escala de 0 a 12 pontos, somando as 12 situações do teste. Barras na mesma escala do Polo GO, para comparação.</p>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <h4>O que isso significa na prática</h4>
+      <p>Com 27% de cinestésicos — a maior proporção do programa —, o Polo SP tem um grupo relevante de líderes que só aprende fazendo. Para eles, explicar de longe não funciona: é preciso mostrar fazendo, deixar repetir e acompanhar a primeira vez. É também a turma com mais perfis D no Módulo I, e os dois dados conversam: dos 14 líderes D do programa, 9 ficaram cinestésicos ou mistos.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Percepções da facilitadora</h2></div>
+    <div class="note good">
+      <h4>Adesão às missões</h4>
+      <p>O Polo SP teve a maior adesão aos desafios de aplicabilidade do Módulo I. Os relatos no retrovisor vieram com exemplos concretos, o que indica que as missões foram de fato executadas no turno e não reconstruídas na hora.</p>
+    </div>
+    <div class="note warn" style="margin-top:12px">
+      <h4>O que ainda precisa virar hábito</h4>
+      <p>Descrever o comportamento observável sem opinião nem julgamento continua sendo a maior dificuldade — é o "C" do SCI+A, e é onde a maior parte dos feedbacks desanda. O acordo final também fica solto: sem combinado específico e com prazo, o mesmo assunto volta no feedback seguinte.</p>
+      <p>Nas orientações, o checklist não é usado por inteiro: as instruções ficam no O QUÊ e no COMO, e o POR QUÊ se perde. Explicar o motivo leva tempo, e nem todo líder tem essa prática — embora seja justamente o que reduz retrabalho e acidente.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<div class="panel" id="pane-m2-pologo" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Turma presencial · Módulo II</div>
+      <h2>Polo GO</h2>
+      <p>A turma mais homogênea do programa em canal de comunicação, e também a que exige acompanhamento mais próximo na aplicação prática.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">11</div><div class="k">Líderes presentes</div><div class="n">Turma integral, sem faltas</div></div>
+      <div class="num"><div class="v">11</div><div class="k">Testes de canais aplicados</div><div class="n">100% da turma</div></div>
+      <div class="num"><div class="v">2</div><div class="k">Respostas na pesquisa de opinião</div><div class="n">De 14 respostas no total</div></div>
+      <div class="num"><div class="v">5h</div><div class="k">Carga horária</div><div class="n">Encontro presencial</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Canal de comunicação da turma</h2>
+      <p>Quase três em cada quatro líderes do Polo GO são auditivos. A palavra falada pesa muito nesta unidade.</p></div>
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:12px">Canal predominante · 11 líderes</div>
+      <div class="bars">
+        <div class="bar-row aa"><div class="lbl">Auditivo</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">73%</div></div>
+        <div class="bar-row vv"><div class="lbl">Visual</div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><div class="val">18%</div></div>
+        <div class="bar-row kk"><div class="lbl">Cinestésico</div><div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div><div class="val">9%</div></div>
+        <div class="bar-row mm"><div class="lbl">Misto</div><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><div class="val">0%</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">8 auditivos · 2 visuais · 1 cinestésico · nenhum misto.</p>
+      <div class="eyebrow" style="margin:22px 0 12px">Média de pontos por canal</div>
+      <div class="bars">
+        <div class="bar-row aa"><div class="lbl">Auditivo</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">5,5</div></div>
+        <div class="bar-row vv"><div class="lbl">Visual</div><div class="bar-track"><div class="bar-fill" style="width:63.6%"></div></div><div class="val">3,5</div></div>
+        <div class="bar-row kk"><div class="lbl">Cinestésico</div><div class="bar-track"><div class="bar-fill" style="width:56.4%"></div></div><div class="val">3,1</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">Escala de 0 a 12 pontos. O auditivo de 5,5 é a maior média de qualquer canal em qualquer grupo do programa.</p>
+    </div>
+    <div class="note warn" style="margin-top:14px">
+      <h4>Cuidado com o tamanho da amostra</h4>
+      <p>O Polo GO tem 11 líderes: um líder a mais ou a menos muda 9 pontos percentuais. Leia como pista, não como regra.</p>
+    </div>
+    <div class="note" style="margin-top:12px">
+      <h4>O que isso significa na prática</h4>
+      <p>Numa turma com 73% de auditivos, o DDS e a conversa olho no olho carregam quase toda a comunicação — e é por isso que o aviso só escrito, no grupo de WhatsApp, tende a falhar aqui. A contrapartida é que o circuito fechado funciona bem neste polo: pedir que o outro repita em voz alta é um comportamento natural para quem já processa pelo som.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Percepções da facilitadora</h2></div>
+    <div class="note warn">
+      <h4>Adesão às missões do Módulo I</h4>
+      <p>Alguns líderes do Polo GO não se empenharam em colocar em prática os dois desafios de autoconhecimento do Módulo I. O pedido à coordenação foi direto: em todo módulo, perguntar ao líder quais são os desafios e como estão indo. A missão só vira hábito se alguém perguntar por ela.</p>
+    </div>
+    <div class="note warn" style="margin-top:12px">
+      <h4>Comunicação entre áreas</h4>
+      <p>A dificuldade entre a liderança da operação e da logística e a liderança da manutenção é mais forte em Goiás — com falta de respeito em alguns casos e problemas que patinam até subirem para coordenadores e gerentes resolverem.</p>
+      <p>O ponto que merece atenção: quando a pergunta foi feita abertamente em sala, os líderes não admitiram que existe dificuldade de comunicação entre as áreas. A análise completa desse descompasso está na aba <b>Pesquisa de Opinião</b>.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<div class="panel" id="pane-m2-mentoria" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Sessão online · Módulo II</div>
+      <h2>Mentoria dos Coordenadores</h2>
+      <p>Encontro de 2h30 realizado depois dos dois presenciais. O propósito permanece duplo: dar à coordenação as mesmas ferramentas dos líderes e prepará-la para sustentar a aplicação no dia a dia.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">6</div><div class="k">Coordenadores presentes</div><div class="n">De 9 convocados · 3 faltas</div></div>
+      <div class="num"><div class="v">2h30</div><div class="k">Duração</div><div class="n">Quatro blocos + fechamento</div></div>
+      <div class="num"><div class="v">9</div><div class="k">Situações analisadas</div><div class="n">Atividade "Atende ou não atende SCI+A?"</div></div>
+      <div class="num"><div class="v">6</div><div class="k">Testes de canais</div><div class="n">Aplicados na própria sessão</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Roteiro da sessão</h2></div>
+    <div class="grid g3">
+      <div class="card"><div class="eyebrow">01 · Alinhar</div><h4 style="font-size:1rem;margin-top:6px">Mesma página dos líderes</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">Os quatro temas do módulo em linguagem de operação: comunicação, feedback, conversas difíceis e oratória — com a atividade que os líderes viveram em cada um.</p></div>
+      <div class="card"><div class="eyebrow">02 · Mostrar</div><h4 style="font-size:1rem;margin-top:6px">Resultados e percepções</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">Teste de canais por polo, pesquisa de opinião e o que a facilitadora observou em campo nos dois polos. Tudo consolidado, sem nomes.</p></div>
+      <div class="card"><div class="eyebrow">03 · Preparar</div><h4 style="font-size:1rem;margin-top:6px">Apoio à aplicação</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">As três missões dos líderes, o que perguntar a cada um e o compromisso individual de cada coordenador para os próximos 30 dias.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>A atividade central: Atende ou não atende SCI+A?</h2>
+      <p>Nove feedbacks fictícios, um para cada coordenador ler em voz alta como se tivesse dado. O grupo vota no chat e a técnica é destrinchada letra por letra. Cinco atendem; quatro não.</p></div>
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:12px">Resultado das 9 situações</div>
+      <div class="sb">
+        <div class="sb-row"><div class="q">Feedbacks analisados</div>
+          <div class="sb-track">
+            <div class="sb-seg ok" style="width:55.6%">Atende · 5</div>
+            <div class="sb-seg no" style="width:44.4%">Não atende · 4</div>
+          </div></div>
+      </div>
+      <div class="legend"><span><i style="background:var(--s)"></i> Atende o SCI+A</span><span><i style="background:var(--warn)"></i> Não atende</span></div>
+      <p style="font-size:.88rem;color:var(--fg-2);margin-top:16px">Os quatro que não atendem concentram os mesmos erros que aparecem em campo: rótulo no lugar do fato ("você é muito desorganizado", "você foi irresponsável"), impacto vago ("isso atrapalhou todo mundo", "prejudicou a empresa"), impacto que recai sobre o coordenador e não sobre a equipe ("a diretoria cobrou muito de mim") e ameaça no lugar de acordo ("se você não melhorar, a gente vai rever a sua posição").</p>
+      <p style="font-size:.88rem;color:var(--fg-2);margin-top:10px">Entre os cinco que atendem, dois são de reconhecimento — a decisão de suspender o carregamento na chuva e o mapa feito para o motorista novo. Reforçam que o SCI+A serve tanto para corrigir quanto para reconhecer, e que no reconhecimento o acordo é multiplicar o que deu certo.</p>
+    </div>
+    <div class="note plum" style="margin-top:14px">
+      <p>A escolha de usar o nome de cada coordenador nas situações é deliberada: coloca a coordenação no lugar de quem dá o feedback, e não de quem avalia o feedback dos outros. As situações são fictícias.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Avaliação 360º de escuta</h2>
+      <p>Instrumento entregue aos 9 coordenadores, para aplicar com até 8 pessoas do próprio círculo de trabalho — líderes da equipe, outros coordenadores, o gestor e parceiros de outras áreas, como a manutenção.</p></div>
+    <div class="grid g2">
+      <div class="card">
+        <h4 style="font-size:1rem">O que mede</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px">Dez comportamentos observáveis de escuta, numa escala de 1 a 5: deixar a pessoa terminar, largar o celular, perguntar antes de dar a solução, repetir com as próprias palavras, perceber o tom de voz, atenção plena, ouvir crítica sem se defender, confirmar os combinados, dar a mesma atenção a quem concorda e a quem discorda, e ser procurado para falar de problemas antes que cresçam.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:1rem">Como se lê o resultado</h4>
+        <p style="font-size:.91rem;color:var(--fg-2);margin-top:7px"><b>40 a 50</b> — ouvinte ativo: a escuta gera confiança e qualifica a informação que chega.<br>
+        <b>30 a 39,9</b> — em desenvolvimento: há bons hábitos, mas a pressa e o ruído do dia a dia atrapalham.<br>
+        <b>Menos de 30</b> — sinal de alerta: a equipe pode estar deixando de trazer problemas.</p>
+        <p style="font-size:.87rem;color:var(--fg-3);margin-top:10px">O resultado é individual e pertence a cada coordenador. A orientação dada foi explícita: não tentar descobrir quem deu cada nota, agradecer a quem respondeu e assumir um compromisso de 30 dias.</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <p>O item 10 é o mais revelador do instrumento: <i>é procurado para falar de problemas antes que eles cresçam</i>. Ele mede exatamente o que a facilitadora observou em campo — problemas que patinam entre as áreas até subirem para a coordenação resolver. Uma nota baixa aqui costuma significar que a informação só chega quando já virou crise.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que a coordenação levou como compromisso</h2>
+      <p>Seis compromissos fecham o módulo. Valem para os líderes e, no caso do segundo, para a coordenação também.</p></div>
+    <div class="rec">
+      <div class="rec-item"><div class="rec-n">1</div><div class="rec-b"><h4>Usar o SCI+A para dar feedbacks estruturados</h4><p>A única técnica do módulo, escolhida de propósito: melhor uma só e bem usada.</p></div></div>
+      <div class="rec-item"><div class="rec-n">2</div><div class="rec-b"><h4>Comprometer todos os níveis com a cultura de feedback</h4><p>Este item vale para a coordenação. A cultura de feedback não existe se os coordenadores não participarem dela.</p></div></div>
+      <div class="rec-item"><div class="rec-n">3</div><div class="rec-b"><h4>Praticar o checklist da orientação no dia a dia</h4><p>O quê, por quê, como, quando e quem — com o circuito fechado: "me conta como você vai fazer?"</p></div></div>
+      <div class="rec-item"><div class="rec-n">4</div><div class="rec-b"><h4>Pensar nos três canais antes de preparar uma orientação</h4><p>No mesmo recado, usar dois canais: falar e mostrar. Para o que é novo ou arriscado, acrescentar o fazer junto.</p></div></div>
+      <div class="rec-item"><div class="rec-n">5</div><div class="rec-b"><h4>Praticar escuta ativa com quem há mais dificuldade</h4><p>Justamente com a pessoa de perfil mais distante do seu — é ali que o ruído é maior.</p></div></div>
+      <div class="rec-item"><div class="rec-n">6</div><div class="rec-b"><h4>Trabalhar os gaps da autoavaliação de oratória</h4><p>Cada líder identificou os dois aspectos de menor nota. Um bom apoio do coordenador é assistir a um DDS e dar o retorno no 1:1, começando pelo que o líder faz bem.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que perguntar a cada líder</h2>
+      <p>Roteiro de acompanhamento das três missões, entregue à coordenação. A dica de ouro: se o líder responder "tudo certo", peça o exemplo.</p></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Missão</th><th>Pergunta de abertura</th><th>O que precisa aparecer na resposta</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Corretivo</td><td>"Qual feedback você deu?"</td><td>A situação e o comportamento como fato, o impacto concreto e o acordo que foi fechado.</td></tr>
+          <tr><td>2 · Reconhecimento</td><td>"Quem você reconheceu?"</td><td>O que a pessoa fez de concreto, o que isso gerou para o turno e o que foi pedido que ela repetisse.</td></tr>
+          <tr><td>3 · Pedir feedback</td><td>"O que você vai fazer com o que ouviu?"</td><td>Que o líder tenha escutado até o fim sem se justificar — e que o coordenador tenha recebido o pedido da mesma forma.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note plum" style="margin-top:14px">
+      <p>Quem não fez a missão não deve ser tratado como fracasso: a orientação é perguntar o que impediu — tempo, medo, não saber como — e combinar uma data. Dada a menor adesão observada no Polo GO no Módulo I, o acompanhamento ali precisa ser mais próximo.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<div class="panel" id="pane-m2-canais" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Teste aplicado · Módulo II</div>
+      <h2>Canais de comunicação da LOTS</h2>
+      <p>Teste online de 12 situações, respondido pelo celular sem login e sem identificação. Mede como cada pessoa prefere perceber, aprender e se conectar: vendo, ouvindo ou fazendo. Pela primeira vez no programa, a coordenação respondeu junto — e é desse cruzamento que vem o achado principal do módulo.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">39</div><div class="k">Testes aplicados</div><div class="n">33 líderes + 6 coordenadores</div></div>
+      <div class="num"><div class="v">52%</div><div class="k">Líderes auditivos</div><div class="n">17 de 33 — o canal dominante</div></div>
+      <div class="num"><div class="v">21%</div><div class="k">Líderes cinestésicos</div><div class="n">7 de 33 — aprendem fazendo</div></div>
+      <div class="num hi"><div class="v">0</div><div class="k">Coordenadores cinestésicos</div><div class="n">O descompasso central do módulo</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Os três canais</h2>
+      <p>Distribuição entre os 33 líderes dos dois polos. "Misto" é quem empatou entre dois ou três canais e, na prática, transita bem entre eles.</p></div>
+    <div class="disc4">
+      <div class="dc aud">
+        <div class="ltr sm">AUDITIVO</div><div class="nm">Se conecta pelo que ouve</div>
+        <div class="big">52%</div><div class="cap">17 líderes · 9 no SP, 8 no GO</div>
+        <ul><li>"Isso não soa bem pra mim"</li><li>Prefere ouvir a ler, gosta de áudio</li><li>Aprende em conversas, DDS e reuniões</li></ul>
+      </div>
+      <div class="dc cin">
+        <div class="ltr sm">CINESTÉSICO</div><div class="nm">Se conecta pelo que faz</div>
+        <div class="big">21%</div><div class="cap">7 líderes · 6 no SP, 1 no GO</div>
+        <ul><li>"Não tô sentindo segurança nisso"</li><li>Aprende fazendo, na prática</li><li>Alta sensibilidade para as entrelinhas</li></ul>
+      </div>
+      <div class="dc vis">
+        <div class="ltr sm">VISUAL</div><div class="nm">Se conecta pelo que vê</div>
+        <div class="big">15%</div><div class="cap">5 líderes · 3 no SP, 2 no GO</div>
+        <ul><li>"Não estou enxergando isso"</li><li>Aprende com mapa, foto e quadro</li><li>Fala rápido e em imagens</li></ul>
+      </div>
+      <div class="dc mix">
+        <div class="ltr sm">MISTO</div><div class="nm">Transita entre canais</div>
+        <div class="big">12%</div><div class="cap">4 líderes · todos no SP</div>
+        <ul><li>Empate entre dois ou três canais</li><li>Absorve bem em qualquer formato</li><li>Bom multiplicador para a equipe</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O descompasso entre a coordenação e a liderança</h2>
+      <p>Este é o achado mais acionável do Módulo II. Os três grupos na mesma escala, lado a lado.</p></div>
+    <div class="card">
+      <div class="pair">
+        <div class="pair-row"><div class="lbl">Auditivo — aprende ouvindo</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:56.2%"></div></div><div class="v">41%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:100%"></div></div><div class="v">73%</div></div>
+          <div class="pair-line co"><div class="u">Coord</div><div class="pair-track"><div class="pair-fill" style="width:23.3%"></div></div><div class="v">17%</div></div></div>
+        <div class="pair-row"><div class="lbl">Visual — aprende vendo</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:19.2%"></div></div><div class="v">14%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:24.7%"></div></div><div class="v">18%</div></div>
+          <div class="pair-line co"><div class="u">Coord</div><div class="pair-track"><div class="pair-fill" style="width:68.5%"></div></div><div class="v">50%</div></div></div>
+        <div class="pair-row"><div class="lbl">Cinestésico — aprende fazendo</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:37.0%"></div></div><div class="v">27%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:12.3%"></div></div><div class="v">9%</div></div>
+          <div class="pair-line co"><div class="u">Coord</div><div class="pair-track"><div class="pair-fill" style="width:0%"></div></div><div class="v">0%</div></div></div>
+        <div class="pair-row"><div class="lbl">Misto — transita entre canais</div>
+          <div class="pair-line sp"><div class="u">SP</div><div class="pair-track"><div class="pair-fill" style="width:24.7%"></div></div><div class="v">18%</div></div>
+          <div class="pair-line go"><div class="u">GO</div><div class="pair-track"><div class="pair-fill" style="width:0%"></div></div><div class="v">0%</div></div>
+          <div class="pair-line co"><div class="u">Coord</div><div class="pair-track"><div class="pair-fill" style="width:45.7%"></div></div><div class="v">33%</div></div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:14px">Barras na mesma escala (0 a 73%). Polo SP 22 líderes · Polo GO 11 líderes · Coordenação 6 respondentes de 9.</p>
+    </div>
+    <div class="note warn" style="margin-top:14px">
+      <h4>A leitura, em uma frase</h4>
+      <p>A coordenação é predominantemente <b>visual</b> (50%) e a liderança é predominantemente <b>auditiva</b> (52%). Metade da coordenação explica do jeito que ela mesma gosta de receber — por escrito, por planilha, por mensagem — enquanto metade da liderança aprende ouvindo. E <b>nenhum coordenador é cinestésico</b>, embora 1 em cada 5 líderes seja.</p>
+      <p>Isso não é defeito de ninguém. É o mecanismo exato da falha descrita no case do módulo: o coordenador manda a mudança de rota no grupo de WhatsApp, o líder repassa pelo rádio, e três motoristas se perdem. A mensagem foi enviada; ela não chegou.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Média de pontos por canal</h2>
+      <p>Além da letra predominante, a intensidade. Cada pessoa distribui 12 pontos entre os três canais.</p></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Grupo</th><th>Auditivo</th><th>Visual</th><th>Cinestésico</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>Líderes · Polo SP (22)</td><td class="num-c">4,8</td><td class="num-c">3,5</td><td class="num-c">3,7</td><td>Mais equilibrado: pede orientação em mais de um canal</td></tr>
+          <tr><td>Líderes · Polo GO (11)</td><td class="num-c">5,5</td><td class="num-c">3,5</td><td class="num-c">3,1</td><td>Forte preferência por ouvir: a palavra falada pesa</td></tr>
+          <tr><td>Coordenação (6 de 9)</td><td class="num-c">4,0</td><td class="num-c">4,8</td><td class="num-c">3,2</td><td>Único grupo em que o visual supera o auditivo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--fg-3);margin-top:10px">Escala de 0 a 12. O auditivo de 5,5 no Polo GO é a maior média de qualquer canal em qualquer grupo; o cinestésico de 3,2 na coordenação é a menor junto com o Polo GO.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Canal e perfil DISC</h2>
+      <p>Cruzamento entre o canal medido agora e o perfil comportamental medido no Módulo I, apenas entre os 33 líderes.</p></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Perfil DISC</th><th>Líderes</th><th>Auditivo</th><th>Visual</th><th>Cinestésico</th><th>Misto</th></tr></thead>
+        <tbody>
+          <tr><td>D · Dominância</td><td class="num-c">14</td><td class="num-c">3</td><td class="num-c">2</td><td class="num-c">6</td><td class="num-c">3</td></tr>
+          <tr><td>C · Conformidade</td><td class="num-c">8</td><td class="num-c">6</td><td class="num-c">2</td><td class="num-c">0</td><td class="num-c">0</td></tr>
+          <tr><td>S · Estabilidade</td><td class="num-c">7</td><td class="num-c">5</td><td class="num-c">1</td><td class="num-c">0</td><td class="num-c">1</td></tr>
+          <tr><td>I · Influência</td><td class="num-c">2</td><td class="num-c">2</td><td class="num-c">0</td><td class="num-c">0</td><td class="num-c">0</td></tr>
+          <tr><td>Não informado</td><td class="num-c">2</td><td class="num-c">1</td><td class="num-c">0</td><td class="num-c">1</td><td class="num-c">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <h4>Dois padrões que saltam</h4>
+      <p><b>Dos 14 líderes de perfil D, 9 são cinestésicos ou mistos.</b> O perfil que decide rápido também é o que precisa pôr a mão. Para ele, a orientação explicada de longe não gruda: é preciso mostrar fazendo e acompanhar a primeira vez.</p>
+      <p><b>Nenhum líder S ou C é cinestésico.</b> Dos 15, 14 são auditivos ou visuais. O perfil que quer o padrão antes de agir aprende pela explicação e pelo documento — e é com ele que o material escrito funciona.</p>
+      <p style="font-size:.85rem;color:var(--fg-3)">A amostra é pequena, então estes padrões servem como hipótese para a conversa do coordenador com cada líder, não como regra.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que fazer com este resultado</h2>
+      <p>Quatro recomendações que decorrem diretamente dos números acima.</p></div>
+    <div class="rec">
+      <div class="rec-item"><div class="rec-n">1</div><div class="rec-b">
+        <h4>No mesmo recado, usar dois canais</h4>
+        <p>Regra prática saída do módulo: fale e mostre. Para a mudança de rota, isso significa o DDS (auditivo) com o mapa na parede (visual). Para o que é novo ou arriscado, acrescente o terceiro: a primeira viagem acompanhada (cinestésico). O custo é de minutos; a falha custa horas de frente parada.</p>
+        <div class="who"><span class="pill co">Coordenação</span><span class="pill sp">Líderes</span></div>
+      </div></div>
+      <div class="rec-item"><div class="rec-n">2</div><div class="rec-b">
+        <h4>A coordenação precisa sair do canal próprio</h4>
+        <p>Com 50% de visuais na coordenação e 52% de auditivos na liderança, o aviso escrito que parece suficiente para quem envia não é suficiente para quem recebe. A pergunta que resolve, feita ao líder uma única vez: "como você prefere receber uma orientação nova?" — e depois ensinar o líder a fazer a mesma pergunta à equipe dele.</p>
+        <div class="who"><span class="pill co">Coordenação</span></div>
+      </div></div>
+      <div class="rec-item"><div class="rec-n">3</div><div class="rec-b">
+        <h4>No Polo GO, nada substitui a palavra falada</h4>
+        <p>Com 73% de auditivos, a comunicação importante nesta unidade precisa passar por voz — conversa, rádio ou DDS. O comunicado apenas escrito tende a falhar aqui. Em compensação, o circuito fechado ("me conta como você vai fazer?") é especialmente eficaz neste polo.</p>
+        <div class="who"><span class="pill go">Polo GO</span></div>
+      </div></div>
+      <div class="rec-item"><div class="rec-n">4</div><div class="rec-b">
+        <h4>Cobrir o canal que a coordenação não tem</h4>
+        <p>Nenhum coordenador é cinestésico, e 7 líderes são. É um ponto cego estrutural: a coordenação tende a subestimar o quanto esses líderes precisam de demonstração prática. Vale acordar explicitamente que toda mudança de procedimento tem uma primeira execução acompanhada, mesmo quando parece simples para quem explicou.</p>
+        <div class="who"><span class="pill co">Coordenação</span><span class="pill">RH</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Uso responsável do teste</h2></div>
+    <div class="grid g3">
+      <div class="card"><h4 style="font-size:.98rem">Não é teste de capacidade</h4><p style="font-size:.88rem;color:var(--fg-2);margin-top:7px">O canal diz como a pessoa prefere receber a informação — não o quanto ela aprende, nem a qualidade do trabalho dela.</p></div>
+      <div class="card"><h4 style="font-size:.98rem">Ninguém usa um canal só</h4><p style="font-size:.88rem;color:var(--fg-2);margin-top:7px">Todos usam os três. O teste mostra a preferência, e ela muda conforme o assunto, a pressa e o cansaço.</p></div>
+      <div class="card"><h4 style="font-size:.98rem">Sem identificação</h4><p style="font-size:.88rem;color:var(--fg-2);margin-top:7px">O teste não pediu nome nem login. Só a turma e, opcionalmente, o perfil DISC. Nenhum resultado individual é apresentado.</p></div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<div class="panel" id="pane-m2-pesquisa" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Avaliação do módulo e opinião sobre a LOTS</div>
+      <h2>Pesquisa de reação e de opinião</h2>
+      <p>Formulário anônimo respondido ao final dos encontros. Tem duas partes: a <b>reação</b>, sobre o módulo em si, e a <b>opinião</b>, em que os líderes avaliam a comunicação e o feedback que recebem na empresa nos últimos três meses. São 14 respostas — 12 do Polo SP e 2 do Polo GO.</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">14</div><div class="k">Respostas</div><div class="n">12 Polo SP · 2 Polo GO</div></div>
+      <div class="num hi"><div class="v">9,6</div><div class="k">Nota média de recomendação</div><div class="n">Escala de 0 a 10</div></div>
+      <div class="num"><div class="v">86</div><div class="k">NPS do módulo</div><div class="n">12 promotores · 2 neutros · 0 detratores</div></div>
+      <div class="num"><div class="v">13</div><div class="k">Respondentes que lideram 20+ pessoas</div><div class="n">De 14 — turmas de alta responsabilidade</div></div>
+    </div>
+    <div class="note warn" style="margin-top:14px">
+      <h4>Leia com esta ressalva</h4>
+      <p>Das 33 pessoas presentes, 14 responderam — e apenas 2 do Polo GO. A parte de reação é confiável como sinal de aceitação, mas a parte de opinião retrata sobretudo o Polo SP. Onde o número por si só não basta, as percepções da facilitadora em campo estão logo abaixo.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Parte 1 · Reação</div>
+      <h2>Como os líderes avaliaram o módulo</h2>
+      <p>Concordância com cada frase, em escala de 1 a 5.</p></div>
+    <div class="card">
+      <div class="scale">
+        <div class="scale-row"><div class="q">A facilitadora explicou com clareza e conduziu bem o grupo</div><div class="scale-track"><div class="scale-fill" style="width:94.2%"></div></div><div class="v">4,7</div></div>
+        <div class="scale-row"><div class="q">O Caderno do Líder me ajuda a lembrar e aplicar</div><div class="scale-track"><div class="scale-fill" style="width:94.2%"></div></div><div class="v">4,7</div></div>
+        <div class="scale-row"><div class="q">O conteúdo é útil para o meu dia a dia</div><div class="scale-track"><div class="scale-fill" style="width:91.4%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row"><div class="q">Houve bom equilíbrio entre teoria e prática</div><div class="scale-track"><div class="scale-fill" style="width:91.4%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row"><div class="q">Os exemplos e cases se parecem com a realidade da LOTS</div><div class="scale-track"><div class="scale-fill" style="width:88.6%"></div></div><div class="v">4,4</div></div>
+        <div class="scale-row low"><div class="q">O local e a estrutura do encontro foram adequados</div><div class="scale-track"><div class="scale-fill" style="width:87.2%"></div></div><div class="v">4,4</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:14px">Barras proporcionais à nota máxima de 5. O item mais baixo — local e estrutura — é o único que depende da contratante e não do conteúdo; uma resposta o avaliou com 2.</p>
+    </div>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <div class="eyebrow">Nota de recomendação</div>
+        <div class="bars" style="margin-top:12px">
+          <div class="bar-row ss"><div class="lbl">Nota 10</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">11</div></div>
+          <div class="bar-row ss"><div class="lbl">Nota 9</div><div class="bar-track"><div class="bar-fill" style="width:9.1%"></div></div><div class="val">1</div></div>
+          <div class="bar-row cc"><div class="lbl">Nota 8</div><div class="bar-track"><div class="bar-fill" style="width:18.2%"></div></div><div class="val">2</div></div>
+        </div>
+        <p style="font-size:.78rem;color:var(--fg-3);margin-top:12px">Nenhuma nota abaixo de 8, em nenhum dos dois polos. Média de 9,6 contra 9,5 no Módulo I.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Tempo do encontro</div>
+        <div class="sb" style="margin-top:12px">
+          <div class="sb-row"><div class="q">Avaliação das 5 horas</div>
+            <div class="sb-track">
+              <div class="sb-seg ok" style="width:71.4%">Suficiente · 10</div>
+              <div class="sb-seg bo" style="width:28.6%">Mais · 4</div>
+            </div></div>
+        </div>
+        <p style="font-size:.88rem;color:var(--fg-2);margin-top:14px">Dez líderes acharam o tempo suficiente e quatro gostariam de mais. É uma melhora em relação ao Módulo I, em que o pedido de mais tempo apareceu em todos os comentários de melhoria.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Os temas: o que mais ajudou e o que pede mais tempo</h2>
+      <p>Cada líder escolheu um tema em cada pergunta. Comparar as duas colunas diz mais do que cada uma isolada.</p></div>
+    <div class="bo">
+      <div class="bo-col pos"><h4>Tema mais útil</h4><ul>
+        <li><span>Estilos de comunicação</span><b style="font-family:var(--display)">4</b></li>
+        <li><span>Técnica SCI+A para dar feedback</span><b style="font-family:var(--display)">4</b></li>
+        <li><span>Processo de comunicação e ruídos</span><b style="font-family:var(--display)">2</b></li>
+        <li><span>Como reagir às reações ao feedback</span><b style="font-family:var(--display)">2</b></li>
+        <li><span>Circuito fechado e explicar o porquê</span><b style="font-family:var(--display)">1</b></li>
+        <li><span>Oratória</span><b style="font-family:var(--display)">1</b></li>
+      </ul></div>
+      <div class="bo-col neg"><h4>Quer mais tempo</h4><ul>
+        <li><span>Oratória</span><b style="font-family:var(--display)">4</b></li>
+        <li><span>Técnica SCI+A para dar feedback</span><b style="font-family:var(--display)">3</b></li>
+        <li><span>Estilos de comunicação</span><b style="font-family:var(--display)">3</b></li>
+        <li><span>Conversas difíceis e perfis DISC</span><b style="font-family:var(--display)">2</b></li>
+        <li><span>Como reagir às reações ao feedback</span><b style="font-family:var(--display)">2</b></li>
+      </ul></div>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <p>A oratória é o tema <b>menos</b> votado como mais útil (1 voto) e o <b>mais</b> votado para ter mais tempo (4 votos). Não é contradição: foi o bloco mais curto do dia e o que mexe com o desconforto mais pessoal — falar em público. O pedido é por prática, não por conteúdo.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que os líderes se sentem capazes de fazer agora</h2>
+      <p>Percentual que respondeu "me sinto capacitado" em cada competência do módulo. Esta é a pergunta mais útil da pesquisa para planejar o Módulo III.</p></div>
+    <div class="card">
+      <div class="scale">
+        <div class="scale-row"><div class="q">Reconhecer e elogiar de forma específica</div><div class="scale-track"><div class="scale-fill" style="width:100%"></div></div><div class="v">100%</div></div>
+        <div class="scale-row"><div class="q">Lidar com a reação do outro (raiva, silêncio, choro)</div><div class="scale-track"><div class="scale-fill" style="width:93%"></div></div><div class="v">93%</div></div>
+        <div class="scale-row"><div class="q">Explicar o porquê das orientações que dá</div><div class="scale-track"><div class="scale-fill" style="width:86%"></div></div><div class="v">86%</div></div>
+        <div class="scale-row"><div class="q">Escolher o melhor canal para cada mensagem</div><div class="scale-track"><div class="scale-fill" style="width:86%"></div></div><div class="v">86%</div></div>
+        <div class="scale-row"><div class="q">Receber feedback sem reagir na defensiva</div><div class="scale-track"><div class="scale-fill" style="width:86%"></div></div><div class="v">86%</div></div>
+        <div class="scale-row"><div class="q">Fechar o circuito da comunicação</div><div class="scale-track"><div class="scale-fill" style="width:79%"></div></div><div class="v">79%</div></div>
+        <div class="scale-row"><div class="q">Conduzir uma conversa difícil conforme o perfil DISC</div><div class="scale-track"><div class="scale-fill" style="width:71%"></div></div><div class="v">71%</div></div>
+        <div class="scale-row low"><div class="q">Falar em público com segurança</div><div class="scale-track"><div class="scale-fill" style="width:64%"></div></div><div class="v">64%</div></div>
+        <div class="scale-row low"><div class="q">Dar feedback corretivo usando SCI+A</div><div class="scale-track"><div class="scale-fill" style="width:57%"></div></div><div class="v">57%</div></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:14px">
+      <h4>O dado mais importante desta pesquisa</h4>
+      <p>Todos os 14 se sentem capazes de <b>reconhecer</b>, mas só 8 de <b>corrigir</b> com a técnica. A diferença de 43 pontos entre elogiar e corrigir é o retrato honesto de onde a liderança está: a parte confortável do feedback foi absorvida, a desconfortável ainda não.</p>
+      <p>E as duas competências de menor confiança — SCI+A corretivo (57%) e falar em público (64%) — são exatamente os dois temas mais pedidos para ter mais tempo. Os líderes sabem o que ainda não dominam, o que torna o pedido deles confiável como orientação de desenho para os próximos módulos.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Parte 2 · Opinião</div>
+      <h2>Como os líderes enxergam a comunicação na LOTS</h2>
+      <p>Concordância com cada frase, pensando nos últimos três meses. Aqui os líderes avaliam a comunicação que <i>recebem</i> — ou seja, a da coordenação.</p></div>
+    <div class="card">
+      <div class="scale">
+        <div class="scale-row"><div class="q">Meu gestor confirma se eu entendi a orientação</div><div class="scale-track"><div class="scale-fill" style="width:95.8%"></div></div><div class="v">4,8</div></div>
+        <div class="scale-row"><div class="q">Sou avisado com antecedência quando algo muda</div><div class="scale-track"><div class="scale-fill" style="width:92.8%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row"><div class="q">Entendo o motivo da mudança</div><div class="scale-track"><div class="scale-fill" style="width:92.8%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row"><div class="q">Sei exatamente a quem recorrer quando tenho dúvida</div><div class="scale-track"><div class="scale-fill" style="width:92.8%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row"><div class="q">Posso dizer "não entendi" sem receio</div><div class="scale-track"><div class="scale-fill" style="width:92.8%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row"><div class="q">Recebo a tempo o que preciso para trabalhar</div><div class="scale-track"><div class="scale-fill" style="width:91.4%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row"><div class="q">Posso discordar ou levar um problema ao gestor</div><div class="scale-track"><div class="scale-fill" style="width:91.4%"></div></div><div class="v">4,6</div></div>
+        <div class="scale-row low"><div class="q">A informação chega igual para todas as frentes e turnos</div><div class="scale-track"><div class="scale-fill" style="width:87.2%"></div></div><div class="v">4,4</div></div>
+        <div class="scale-row low"><div class="q">A comunicação entre as áreas funciona bem</div><div class="scale-track"><div class="scale-fill" style="width:87.2%"></div></div><div class="v">4,4</div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-3);margin-top:14px">Todos os itens entre 4,4 e 4,8 — um retrato muito positivo. Os dois mais baixos são justamente os que tratam de atravessar fronteiras: entre turnos e entre áreas.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Canais e falhas</h2>
+      <p>Onde a orientação funciona melhor e o que mais a faz falhar, na visão de quem recebe.</p></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="eyebrow">Canal que funciona melhor para receber uma orientação importante</div>
+        <div class="bars" style="margin-top:12px">
+          <div class="bar-row aa"><div class="lbl">Conversa presencial</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">6</div></div>
+          <div class="bar-row aa"><div class="lbl">Reunião, DDS, alinhamento</div><div class="bar-track"><div class="bar-fill" style="width:83.3%"></div></div><div class="val">5</div></div>
+          <div class="bar-row vv"><div class="lbl">Comunicado escrito</div><div class="bar-track"><div class="bar-fill" style="width:33.3%"></div></div><div class="val">2</div></div>
+          <div class="bar-row vv"><div class="lbl">Grupo de WhatsApp</div><div class="bar-track"><div class="bar-fill" style="width:16.7%"></div></div><div class="val">1</div></div>
+        </div>
+        <p style="font-size:.85rem;color:var(--fg-2);margin-top:12px"><b>11 de 14 preferem a voz.</b> Bate exatamente com o teste de canais, que mediu 52% de auditivos entre os líderes. Dois instrumentos independentes apontando para o mesmo lugar.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Principais causas de falha · até 2 por líder</div>
+        <div class="bars" style="margin-top:12px">
+          <div class="bar-row neutral"><div class="lbl">Informação incompleta</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">5</div></div>
+          <div class="bar-row neutral"><div class="lbl">Passa por muita gente</div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><div class="val">3</div></div>
+          <div class="bar-row neutral"><div class="lbl">Barulho e ambiente</div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><div class="val">3</div></div>
+          <div class="bar-row neutral"><div class="lbl">Ninguém explica o porquê</div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><div class="val">2</div></div>
+          <div class="bar-row neutral"><div class="lbl">Ninguém confirma</div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><div class="val">2</div></div>
+          <div class="bar-row neutral"><div class="lbl">Falta espaço para dúvidas</div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><div class="val">2</div></div>
+        </div>
+        <p style="font-size:.85rem;color:var(--fg-2);margin-top:12px">A causa mais citada — informação incompleta — é exatamente o que o checklist O QUÊ, POR QUÊ, COMO, QUANDO e QUEM resolve. E "ninguém explica o porquê" somado a "ninguém confirma" são os dois pilares do circuito fechado.</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <p>Com que frequência uma informação chega errada, incompleta ou atrasada e gera retrabalho: <b>nunca</b> 3 · <b>raramente</b> 7 · <b>às vezes</b> 3 · <b>frequentemente</b> 1. Quatro em cada catorze convivem com isso de forma recorrente.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Feedback: a percepção e os fatos</h2>
+      <p>As duas colunas abaixo vêm da mesma pesquisa, das mesmas 14 pessoas. Elas não dizem a mesma coisa.</p></div>
+    <div class="grid g2">
+      <div class="card" style="border-top:3px solid var(--s)">
+        <div class="eyebrow">O que a escala diz</div>
+        <div class="scale" style="margin-top:12px">
+          <div class="scale-row"><div class="q">Meu gestor me apoia no feedback difícil</div><div class="scale-track"><div class="scale-fill" style="width:95.8%"></div></div><div class="v">4,8</div></div>
+          <div class="scale-row"><div class="q">O feedback é dado em particular e com respeito</div><div class="scale-track"><div class="scale-fill" style="width:94.2%"></div></div><div class="v">4,7</div></div>
+          <div class="scale-row"><div class="q">O feedback que recebo é específico</div><div class="scale-track"><div class="scale-fill" style="width:92.8%"></div></div><div class="v">4,6</div></div>
+          <div class="scale-row"><div class="q">Recebo feedback do meu gestor com regularidade</div><div class="scale-track"><div class="scale-fill" style="width:91.4%"></div></div><div class="v">4,6</div></div>
+          <div class="scale-row low"><div class="q">Dou feedback à minha equipe com regularidade</div><div class="scale-track"><div class="scale-fill" style="width:85.8%"></div></div><div class="v">4,3</div></div>
+        </div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--warn)">
+        <div class="eyebrow">O que as datas dizem</div>
+        <p style="font-size:.85rem;color:var(--fg-3);margin-top:10px;font-weight:600;font-family:var(--display);letter-spacing:.06em;text-transform:uppercase">Último feedback recebido do gestor</p>
+        <div class="bars" style="margin-top:8px">
+          <div class="bar-row ss"><div class="lbl">Nesta semana</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">4</div></div>
+          <div class="bar-row ss"><div class="lbl">Neste mês</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">4</div></div>
+          <div class="bar-row cc"><div class="lbl">Há 2 ou 3 meses</div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><div class="val">2</div></div>
+          <div class="bar-row dd"><div class="lbl">Há mais de 3 meses</div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><div class="val">3</div></div>
+          <div class="bar-row dd"><div class="lbl">Nunca recebi</div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><div class="val">1</div></div>
+        </div>
+        <p style="font-size:.85rem;color:var(--fg-2);margin-top:14px"><b>4 de 14 ficaram mais de 3 meses sem retorno — ou nunca receberam.</b> Na escala, o mesmo grupo concorda que recebe feedback com regularidade.</p>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:14px">
+      <h4>Como ler essa diferença</h4>
+      <p>Não é contradição nem má-fé: é o que acontece quando "regularidade" não tem uma definição combinada. Quem conversa com o coordenador todo dia sobre a operação sente que recebe retorno — mesmo sem nunca ter tido uma conversa de feedback estruturada. A escala mede a sensação; a data mede o fato.</p>
+      <p>Para o RH, a consequência prática é direta: <b>o indicador a acompanhar é a data, não a percepção</b>. E vale notar que o item mais baixo de todos é "dou feedback à minha equipe com regularidade" (4,3) — a própria liderança reconhece que entrega menos do que recebe.</p>
+    </div>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <div class="eyebrow">Último feedback dado à equipe</div>
+        <p style="font-size:.92rem;color:var(--fg-2);margin-top:9px">Nesta semana 6 · neste mês 5 · há 2 ou 3 meses 3. Nenhum líder passou mais de três meses sem falar com a equipe — a frequência que eles dão é melhor do que a que recebem.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Conversa difícil nos últimos 30 dias</div>
+        <p style="font-size:.92rem;color:var(--fg-2);margin-top:9px">Oito não precisaram, três conversaram quando precisou e três adiaram. Entre os seis que enfrentaram a situação, metade adiou — proporção que o Simulador de Rota e a Missão 2 atacam diretamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que mais ajudaria a melhorar</h2>
+      <p>Até três escolhas por líder, 28 citações no total. Em destaque, os quatro itens que dependem diretamente da coordenação.</p></div>
+    <div class="card">
+      <div class="bars">
+        <div class="bar-row neutral"><div class="lbl">Mais tempo na agenda para conversar</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">7</div></div>
+        <div class="bar-row neutral"><div class="lbl">Padrão para comunicar mudanças</div><div class="bar-track"><div class="bar-fill" style="width:71.4%"></div></div><div class="val">5</div></div>
+        <div class="bar-row neutral"><div class="lbl">Alinhamento diário no turno</div><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><div class="val">3</div></div>
+        <div class="bar-row neutral"><div class="lbl">Treinar também os coordenadores</div><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><div class="val">3</div></div>
+        <div class="bar-row neutral"><div class="lbl">Reconhecimento formal das boas práticas</div><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><div class="val">3</div></div>
+        <div class="bar-row neutral"><div class="lbl">Canal oficial por tipo de informação</div><div class="bar-track"><div class="bar-fill" style="width:28.6%"></div></div><div class="val">2</div></div>
+        <div class="bar-row neutral"><div class="lbl">Rotina mensal líder e coordenador</div><div class="bar-track"><div class="bar-fill" style="width:28.6%"></div></div><div class="val">2</div></div>
+        <div class="bar-row neutral"><div class="lbl">Quadro de gestão à vista</div><div class="bar-track"><div class="bar-fill" style="width:28.6%"></div></div><div class="val">2</div></div>
+        <div class="bar-row neutral"><div class="lbl">Apoio do RH em conversas difíceis</div><div class="bar-track"><div class="bar-fill" style="width:14.3%"></div></div><div class="val">1</div></div>
+      </div>
+    </div>
+    <div class="note good" style="margin-top:14px">
+      <h4>Metade do pedido está nas mãos da coordenação</h4>
+      <p>Quatro dos nove itens — tempo na agenda, alinhamento diário, rotina mensal de feedback e treinar os coordenadores — somam <b>15 das 28 citações</b> e não dependem de orçamento nem de decisão da diretoria. Dependem de agenda.</p>
+      <p>Vale sublinhar o pedido de <b>treinar também os coordenadores</b>, feito por líderes que não sabiam que a mentoria já existe. É um voto de confiança no programa e um argumento para mantê-lo nos dois níveis.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Percepções da facilitadora</h2>
+      <p>O que foi observado em campo, nos dois polos. Esta seção existe porque há coisas que a pesquisa anônima não captura — e uma delas é a mais importante do módulo.</p></div>
+
+    <div class="note warn">
+      <h4>O conflito entre áreas que ninguém assume</h4>
+      <p>Existe dificuldade real de comunicação entre a liderança da operação e da logística e a liderança da manutenção. Em alguns casos há falta de respeito; os problemas patinam e acabam subindo para coordenadores e gerentes resolverem. A situação é mais forte em Goiás, mas também está presente em São Paulo.</p>
+      <p>O que chama a atenção não é o conflito — é a negação dele. <b>Quando a pergunta foi feita abertamente em sala, os líderes não admitiram que o problema existe.</b> E na pesquisa anônima, 12 de 14 afirmaram que a comunicação entre as áreas funciona bem.</p>
+      <p>Por que é tão difícil assumir? As hipóteses levantadas com a coordenação: medo de expor o colega ou a si mesmo, receio de que o problema volte para quem falou, o hábito já instalado de resolver subindo para o coordenador, e a ausência de um combinado entre as áreas sobre como tratar divergências. Este é o tema que abre o Módulo III.</p>
+    </div>
+
+    <div class="note warn" style="margin-top:12px">
+      <h4>O que ainda precisa virar hábito</h4>
+      <p><b>Na orientação:</b> o checklist não é usado por inteiro. As instruções ficam no O QUÊ e no COMO, e o POR QUÊ se perde. Explicar o motivo leva tempo e nem todo líder tem essa prática — embora seja justamente o que reduz retrabalho e acidente.</p>
+      <p><b>No feedback:</b> descrever o comportamento observável sem opinião nem julgamento continua sendo difícil. E o acordo final fica solto: sem combinado específico, o mesmo assunto volta no feedback seguinte.</p>
+      <p><b>Na oratória:</b> mesmo à vontade com a própria equipe, o líder precisa cuidar da pronúncia e da fala em outros ambientes.</p>
+      <p>As observações em sala confirmam os números: o SCI+A (57% de confiança) e a oratória (64%) são as áreas mais frágeis.</p>
+    </div>
+
+    <div class="note plum" style="margin-top:12px">
+      <h4>O que depende da coordenação</h4>
+      <p>Aplicar não é o mesmo que aprender. Quando o coordenador pergunta pela missão, pede o checklist completo e fecha o acordo junto, o hábito vira rotina. E vale a pergunta de volta: quando o coordenador passa uma orientação ao líder, o checklist <i>dele</i> está completo? O líder aprende pelo exemplo de quem o orienta.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que os líderes escreveram</h2>
+      <p>Comentários selecionados entre as respostas abertas, reproduzidos como foram escritos, com ajustes mínimos de digitação.</p></div>
+    <div class="quotes">
+
+      <div class="quote long">
+        <p>"Treinamento é muito produtivo e trouxe ferramentas práticas que já consigo aplicar no meu dia a dia com a minha equipe. Tem bastante conteúdo, teoria, prática e fatos que acontecem nas operações, bastante interação dos participantes."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote long">
+        <p>"Seria bom um treinamento assim para nossa operação: eles precisam aprender a ouvir e entender com afetividade o que os líderes pedem."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"LOTS Group está de parabéns pela iniciativa de treinamento à liderança."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Eu só tenho a elogiar toda a equipe LOTS. Acredito que a evolução de cada um vai se fazer presente nos seus esforços, colhendo as informações recebidas no treinamento para o melhor de cada um."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"No momento, só agradecer a oportunidade de aperfeiçoamento, com foco em feedback e comunicação."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Treinamento bom, conteúdo excelente. Só aprendizado."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Programa está sendo muito produtivo."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 9</span></div>
+      </div>
+
+      <div class="quote">
+        <p>"Mais treinamentos como esse."</p>
+        <div class="tagrow"><span class="pill sp">Polo SP</span><span class="score">Nota 10</span></div>
+      </div>
+
+    </div>
+    <div class="note" style="margin-top:14px">
+      <h4>Um comentário merece decisão da empresa</h4>
+      <p>O pedido de estender o treinamento para a equipe operacional — "<i>eles precisam aprender a ouvir e entender com afetividade o que os líderes pedem</i>" — não é elogio nem reclamação. É um líder apontando que a comunicação melhorada de um lado só encontra o outro lado preparado se houver trabalho ali também. Vale ao RH considerar se faz sentido um formato curto para as equipes, ainda que fora do escopo atual do programa.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>O que vai ser aplicado nos próximos 30 dias</h2>
+      <p>Resposta aberta sobre a prática que cada líder levou para o turno.</p></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="eyebrow">As respostas</div>
+        <p style="font-size:.93rem;color:var(--fg-2);margin-top:9px">Sete das nove respostas válidas citam feedback — "feedback SCI+A", "feedback usando o DISC", "técnicas no feedback". Uma cita explicitamente "explicar o porquê das orientações passadas à equipe".</p>
+        <p style="font-size:.88rem;color:var(--fg-3);margin-top:10px">O feedback dominou a intenção de aplicação, o que é coerente com os temas mais votados como úteis — e com o fato de as três missões girarem em torno dele.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">O que pode dificultar a aplicação</div>
+        <div class="bars" style="margin-top:12px">
+          <div class="bar-row ss"><div class="lbl">Não vejo dificuldades</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">8</div></div>
+          <div class="bar-row cc"><div class="lbl">Falta de tempo na rotina</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">8</div></div>
+          <div class="bar-row cc"><div class="lbl">Preciso praticar mais antes</div><div class="bar-track"><div class="bar-fill" style="width:37.5%"></div></div><div class="val">3</div></div>
+          <div class="bar-row dd"><div class="lbl">Receio de conflito ou de me expor</div><div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div><div class="val">1</div></div>
+        </div>
+        <p style="font-size:.85rem;color:var(--fg-2);margin-top:12px">Até 2 escolhas por líder. A falta de tempo empata com a ausência de obstáculos — e volta como o pedido mais citado de melhoria: mais tempo na agenda para conversar.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<div class="panel" id="pane-m2-materiais" hidden>
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Módulo II</div>
+      <h2>Material aplicado</h2>
+      <p>Os materiais completos usados nos encontros, em PDF. Os decks incluem as notas de condução, os gabaritos dos jogos e os cases.</p>
+    </div>
+    <div class="files">
+      <a class="file" href="materiais/sou-lider-lots-modulo-2-7be41c02.pdf" target="_blank" rel="noopener">
+        <div class="ext">PDF</div>
+        <div><h4>Sou Líder LOTS — Módulo II</h4>
+        <p>Material do treinamento presencial com os líderes operacionais: comunicação, feedback, conversas difíceis e oratória.</p>
+        <div class="open">Abrir ↗</div></div>
+      </a>
+      <a class="file" href="materiais/mentoria-coordenadores-modulo-2-9d3ca517.pdf" target="_blank" rel="noopener">
+        <div class="ext">PDF</div>
+        <div><h4>Mentoria dos Coordenadores — Módulo II</h4>
+        <p>Material da sessão online, com os resultados consolidados, a atividade "Atende ou não atende SCI+A?" e o roteiro de acompanhamento das missões.</p>
+        <div class="open">Abrir ↗</div></div>
+      </a>
+      <a class="file" href="materiais/caderno-do-lider-modulo-2-4e8f1b66.pdf" target="_blank" rel="noopener">
+        <div class="ext">PDF</div>
+        <div><h4>Caderno do Líder — Módulo II</h4>
+        <p>Material de trabalho que cada líder levou: exercícios de estilos, o case da rota, o teste "Que ouvinte eu sou?", a técnica SCI+A, o mapa da conversa adiada e o registro das três missões.</p>
+        <div class="open">Abrir ↗</div></div>
+      </a>
+      <a class="file" href="materiais/avaliacao-360-escuta-coordenadores-2c71f0ab.pdf" target="_blank" rel="noopener">
+        <div class="ext">PDF</div>
+        <div><h4>Avaliação 360º de Escuta</h4>
+        <p>Instrumento entregue aos coordenadores na mentoria, para aplicar com até 8 pessoas do próprio círculo de trabalho. Inclui o questionário, a totalização e a chave de leitura do resultado.</p>
+        <div class="open">Abrir ↗</div></div>
+      </a>
+    </div>
+    <div class="note" style="margin-top:16px">
+      <p>O Caderno do Líder é o elo entre a sala e o turno: é nele que o líder registra as três missões até o Módulo III, com prazo de 24/11 para o formulário. Vale a coordenação pedir para ver nos 1:1.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Próxima parada</h2>
+      <p>Módulo III — Inteligência Emocional, Segurança Psicológica e Gestão de Conflitos.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="eyebrow">Polo GO</div><h4 style="font-size:1.1rem;margin-top:6px">30 de novembro</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">Encontro presencial com a turma de líderes operacionais.</p></div>
+      <div class="card"><div class="eyebrow">Polo SP</div><h4 style="font-size:1.1rem;margin-top:6px">3 de dezembro</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">Encontro presencial com a turma de líderes operacionais.</p></div>
+      <div class="card"><div class="eyebrow">Mentoria</div><h4 style="font-size:1.1rem;margin-top:6px">4 de dezembro</h4><p style="font-size:.9rem;color:var(--fg-2);margin-top:7px">Sessão online com os coordenadores das duas unidades.</p></div>
+    </div>
+    <div class="note plum" style="margin-top:14px">
+      <p>O Módulo III chega no momento certo: o conflito entre a operação e a manutenção, observado em campo e ainda não assumido pelos líderes, é exatamente o tema que ele trata. O desafio declarado no fechamento da mentoria — como manter o ritmo do programa com o fim de safra e as férias — vale como alerta de agenda para o RH.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+</div><!-- /mod-m2 -->
 
 <div id="mod-m3" hidden><div class="panel"><div class="wrap"><div class="soon">
   <div class="m">M3</div><h2>Inteligência Emocional</h2>
-  <p>Segurança psicológica e gestão de conflitos. Conteúdo publicado após a realização do módulo nas duas unidades.</p>
-  <span class="pill when">Dezembro/2026</span>
+  <p>Segurança psicológica e gestão de conflitos. O tema chega logo depois do que foi observado no Módulo II: o conflito entre a operação e a manutenção. Conteúdo publicado após a realização nas duas unidades.</p>
+  <span class="pill when">Polo GO 30/11 · Polo SP 03/12 · Mentoria 04/12</span>
 </div></div></div></div>
 
 <div id="mod-m4" hidden><div class="panel"><div class="wrap"><div class="soon">
   <div class="m">M4</div><h2>Gestão de Pessoas</h2>
   <p>Desempenho, delegação, tomada de decisão, desenvolvimento de equipe e engajamento.</p>
-  <span class="pill when">Data a confirmar</span>
+  <span class="pill when">Dezembro/2026</span>
 </div></div></div></div>
 
 <div id="mod-m5" hidden><div class="panel"><div class="wrap"><div class="soon">
   <div class="m">M5</div><h2>Gestão de Performance</h2>
   <p>Resolução de problemas, indicadores, metas e resultado.</p>
-  <span class="pill when">Data a confirmar</span>
+  <span class="pill when">Fevereiro/2027</span>
 </div></div></div></div>
 
 <div id="mod-m6" hidden><div class="panel"><div class="wrap"><div class="soon">
   <div class="m">M6</div><h2>Líder do Futuro</h2>
   <p>Leitura de cenário, nova geração, retenção e PDI. Encerramento do programa, com o Ranking da Rota e o reconhecimento de quem mais aplicou.</p>
-  <span class="pill when">Data a confirmar</span>
+  <span class="pill when">Março/2027</span>
 </div></div></div></div>
 
 </main>
@@ -1409,52 +2393,66 @@ footer .c b{color:#fff;font-weight:600;font-family:var(--display)}
 
 <script>
 (function(){
+  var MODS = ['m1','m2','m3','m4','m5','m6'];
   var stops = Array.prototype.slice.call(document.querySelectorAll('.stop'));
   var tabs  = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  var tabbar = document.getElementById('tabbar');
 
-  function showModule(id){
-    stops.forEach(function(s){
-      var on = s.dataset.mod === id;
-      s.setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-    ['m1','m2','m3','m4','m5','m6'].forEach(function(m){
-      var el = document.getElementById('mod-' + m);
-      if (el) el.hidden = (m !== id);
-    });
-    tabbar.hidden = (id !== 'm1');
+  function tabsOf(mod){
+    return tabs.filter(function(t){ return t.dataset.mod === mod; });
   }
 
-  function showTab(id){
-    tabs.forEach(function(t){
-      t.setAttribute('aria-selected', t.dataset.tab === id ? 'true' : 'false');
+  function showTab(mod, tab){
+    tabsOf(mod).forEach(function(t){
+      var on = t.dataset.tab === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      var pane = document.getElementById('pane-' + mod + '-' + t.dataset.tab);
+      if (pane) pane.hidden = !on;
     });
-    ['visao','prudente','mineiros','mentoria','disc','pesquisa','materiais'].forEach(function(p){
-      var el = document.getElementById('pane-' + p);
-      if (el) el.hidden = (p !== id);
+  }
+
+  function showModule(mod, tab){
+    stops.forEach(function(s){
+      s.setAttribute('aria-selected', s.dataset.mod === mod ? 'true' : 'false');
     });
+    MODS.forEach(function(m){
+      var el = document.getElementById('mod-' + m);
+      if (el) el.hidden = (m !== mod);
+    });
+    var list = tabsOf(mod);
+    if (list.length) showTab(mod, tab || list[0].dataset.tab);
   }
 
   stops.forEach(function(s){
     s.addEventListener('click', function(){
       showModule(s.dataset.mod);
-      if (s.dataset.mod === 'm1') showTab('visao');
+      try { history.replaceState(null, '', '#' + s.dataset.mod); } catch(e){}
       window.scrollTo({top:0, behavior:'smooth'});
     });
   });
 
   tabs.forEach(function(t){
     t.addEventListener('click', function(){
-      showTab(t.dataset.tab);
-      try { history.replaceState(null, '', '#' + t.dataset.tab); } catch(e){}
-      var y = tabbar.getBoundingClientRect().top + window.scrollY - 4;
-      if (window.scrollY > y) window.scrollTo({top:y, behavior:'smooth'});
+      var mod = t.dataset.mod;
+      showTab(mod, t.dataset.tab);
+      try { history.replaceState(null, '', '#' + mod + '-' + t.dataset.tab); } catch(e){}
+      var bar = t.closest('.tabbar');
+      if (bar) {
+        var y = bar.getBoundingClientRect().top + window.scrollY - 4;
+        if (window.scrollY > y) window.scrollTo({top:y, behavior:'smooth'});
+      }
     });
   });
 
-  var valid = ['visao','prudente','mineiros','mentoria','disc','pesquisa','materiais'];
+  // #m2 | #m2-canais | #disc (compatibilidade com links antigos do M1)
   var h = (location.hash || '').replace('#','');
-  if (valid.indexOf(h) !== -1) { showModule('m1'); showTab(h); }
+  var mod = null, tab = null;
+  if (h) {
+    var parts = h.split('-');
+    if (MODS.indexOf(parts[0]) !== -1) { mod = parts[0]; tab = parts.slice(1).join('-') || null; }
+    else { mod = 'm1'; tab = {prudente:'polosp', mineiros:'pologo'}[h] || h; }
+    if (tab && !tabsOf(mod).some(function(t){ return t.dataset.tab === tab; })) tab = null;
+  }
+  showModule(mod || 'm2', tab);
 })();
 </script>
 
